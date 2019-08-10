@@ -7,6 +7,13 @@
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .private_buttons
+        {
+            width: 352px;
+            height: 45px;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -14,7 +21,7 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    My ASP.NET Application
+                    Vendor Order Management System
                 </h1>
             </div>
             <div class="loginDisplay">
@@ -29,6 +36,7 @@
                 </asp:LoginView>
             </div>
             <div class="clear hideSkiplink">
+                <div style = "float:left; width : 45%" > 
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
@@ -36,7 +44,24 @@
                         <asp:MenuItem NavigateUrl="~/ContactUs.aspx" Text="Contact Us"/>
                     </Items>
                 </asp:Menu>
-            </div>
+               </div>
+               
+                <div style = "float:left; width : 45%; height: 47px;" > 
+                
+                <asp:Menu ID="PrivateMenu" runat="server" CssClass="menu" EnableViewState="false" 
+                        IncludeStyleBlock="False" Orientation="Horizontal" 
+                        BorderStyle="Solid" Visible="False">
+                    <Items>
+                         <asp:MenuItem NavigateUrl="~/Private_Pages/Private1.aspx" Text="Private Page 1"/>
+                         <asp:MenuItem NavigateUrl="~/Private_Pages/Private2.aspx" Text="Private Page 2"/>
+                        
+                    </Items>
+                </asp:Menu>
+                </div>
+                </div>
+            <br />
+            <br />
+            
         </div>
         <div class="main">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>

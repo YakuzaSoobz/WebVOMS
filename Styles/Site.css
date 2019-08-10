@@ -146,6 +146,8 @@ div.hideSkiplink
 {
     background-color:#3a4f63;
     width:100%;
+    height: 63px;
+    margin-bottom: 0px;
 }
 
 div.menu
