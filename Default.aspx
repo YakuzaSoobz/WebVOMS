@@ -52,8 +52,6 @@
                                     SortExpression="Product_Brand" />
                                 <asp:BoundField DataField="Product_Description" HeaderText="Description" 
                                     SortExpression="Product_Description" />
-                                <asp:BoundField DataField="Product_Active_Status" HeaderText="Active Status" 
-                                    SortExpression="Product_Active_Status" />
                             </Columns>
                             <EditRowStyle BackColor="#999999" />
                             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -68,7 +66,12 @@
                         </asp:GridView>
                         <asp:SqlDataSource ID="SQLAllProduct" runat="server" 
                             ConnectionString="<%$ ConnectionStrings:group16ConnectionString %>" 
-                            SelectCommand="SELECT * FROM [Product]"></asp:SqlDataSource>
+                            
+                            SelectCommand="SELECT * FROM [Product] WHERE ([Product_Active_Status] = @Product_Active_Status)">
+                            <SelectParameters>
+                                <asp:Parameter DefaultValue="T" Name="Product_Active_Status" Type="String" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
                     </p>
                     <p style="padding: 0px; margin: 0px">
                         &nbsp;</p>
