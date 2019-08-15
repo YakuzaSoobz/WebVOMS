@@ -11,6 +11,7 @@
         Please enter your username and password.
         <asp:HyperLink ID="RegisterHyperLink" runat="server" EnableViewState="false">Register</asp:HyperLink> if you don't have an account.
     </p>
+    <div style="width: 400px; margin-left: auto; margin-right:auto;">
     <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false">
         <LayoutTemplate>
             <span class="failureNotification">
@@ -19,7 +20,7 @@
             <asp:ValidationSummary ID="LoginUserValidationSummary" runat="server" CssClass="failureNotification" 
                  ValidationGroup="LoginUserValidationGroup"/>
             <div class="accountInfo">
-                <fieldset class="login">
+                <fieldset class="login" style="text-align: center">
                     <legend>Account Information</legend>
                     <p>
                         <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Username:</asp:Label>
@@ -41,9 +42,12 @@
                     </p>
                 </fieldset>
                 <p class="submitButton">
+                <div style="width: 400px; margin-left: auto; margin-right:auto;">
                     <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="LoginUserValidationGroup"/>
+                </div>
                 </p>
             </div>
         </LayoutTemplate>
     </asp:Login>
+    </div>
 </asp:Content>

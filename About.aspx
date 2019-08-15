@@ -24,7 +24,10 @@
      
     <div style="text-align: center;width: 500px; margin: 0 auto;">
         <br />
-        <asp:Image ID="Image1" runat="server" />
+        <asp:Image ID="Image1" runat="server"
+           AlternateText="Image text"
+           ImageUrl="~/Pictures/ohya.jpg" Width="503px"/>
+       
         <br />
         Image of M.I.S.S&#39;s headquarters</div>
 
