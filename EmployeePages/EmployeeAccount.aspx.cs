@@ -9,6 +9,6 @@ public partial class EmployeePages_EmployeeAccount : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        PageMenu.Initialise(Page); 
     }
 }
