@@ -43,8 +43,20 @@
                 </fieldset>
                 <p class="submitButton">
                 <div style="width: 400px; margin-left: auto; margin-right:auto;">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:group16ConnectionString %>" 
+                        SelectCommand="SELECT [Cust_Email], [Cust_Password] FROM [Customer] WHERE (([Cust_Email] = @Cust_Email) AND ([Cust_Password] = @Cust_Password))">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="UserName" Name="Cust_Email" 
+                                PropertyName="Text" Type="String" />
+                            <asp:ControlParameter ControlID="Password" Name="Cust_Password" 
+                                PropertyName="Text" Type="String" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                     <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="LoginUserValidationGroup"/>
                 </div>
+                    <p>
+                    </p>
                 </p>
             </div>
         </LayoutTemplate>
