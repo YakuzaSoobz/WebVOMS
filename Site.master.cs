@@ -9,7 +9,8 @@ public partial class SiteMaster : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        PageMenu.Initialise(Page); 
+        PageMenu.Initialise(Page);
+        Response.Write("HElllllo");
     }
     protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
     {
