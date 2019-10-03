@@ -1,0 +1,278 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ManagerMasterPage.master.cs" Inherits="ManagerMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>M.I.S.S  Website</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+            margin-top: 0px;
+        }
+        .style3
+        {
+            width: 100px;
+            height:100px;
+        }
+        .style4
+        {
+            width: 85%;
+        }
+        .style6
+        {
+            height: 100px;
+            width: 459px;
+        }
+        .style7
+        {
+            width: 1381px;
+        }
+        .style8
+        {
+            height: 100px;
+        }
+        .style11
+        {
+            width: 2029px;
+        }
+        .style12
+        {
+            width: 1559px;
+            margin-top: 0px;
+        }
+        .style16
+        {
+            width: 70px;
+        }
+        .style17
+        {
+            width: 71px;
+        }
+        </style>
+</head>
+<body>
+    <form id="Form1" runat="server" style="background-color: #FFFFFF">
+
+        <div class="header" 
+            
+            style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #FFFFFF">
+                <div class="title" style="background-color: #598BB0">
+
+                    <table cellpadding="0" cellspacing="5" class="style1">
+                        <tr>
+                            <td class="style3" >
+                                <asp:ImageButton ID="Image1" runat="server" Height="100px" Width="100px" 
+                                    ImageUrl="~/Images/M.I.S.S Logo.jpg" onclick="Image1_Click" />
+                            </td>
+                            <td class="style4" style="text-align: center">
+                                <h1 style="font-size: 3em">
+                                    Mhlatuze Industrial Suppliers &amp; Services cc</h1>
+                            </td>
+                            <td style="width: 200px; height: 100px; text-align: center;">
+                                <div class="loginDisplay">
+                                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                                        <AnonymousTemplate>
+                                             <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server" style="font-size: x-large">SIGN IN</a> 
+                                        </AnonymousTemplate>
+                                        <LoggedInTemplate>
+                                        
+                                            Signed in as: <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                                            <br />
+                                             <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> 
+                                        </LoggedInTemplate>
+                                    </asp:LoginView>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                
+                </div>
+                <div class="clear hideSkiplink" style="border-top: 1px solid #FFFFFF; width: 100%;">
+
+                    <div style = "float:left;">
+                        <asp:Menu ID="PublicNavigationMenu" runat="server" CssClass="menu" 
+                            EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
+                            ForeColor="#666666" BackColor="#E3EAEB" BorderStyle="None" 
+                            DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
+                            StaticSubMenuIndent="10px">
+                            <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle BackColor="#E3EAEB" />
+                            <DynamicSelectedStyle BackColor="#1C5E55" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                                <asp:MenuItem NavigateUrl="~/About.aspx" Text="About Us"/>
+                                <asp:MenuItem Text="Contact Us" Value="Contact Us" 
+                                    NavigateUrl="~/ContactUs.aspx"></asp:MenuItem>
+                            </Items>
+                            <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle BackColor="#1C5E55" />
+                        </asp:Menu>
+                    </div>
+                    
+
+                    <div style="float: left">
+                        <asp:Menu ID="EmployeeNavigationMenu" runat="server" CssClass="menu" 
+                            EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
+                            ForeColor="#666666" BackColor="#E3EAEB" BorderStyle="None" 
+                            DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
+                            StaticSubMenuIndent="10px" Visible="False">
+                            <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle BackColor="#E3EAEB" />
+                            <DynamicSelectedStyle BackColor="#1C5E55" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/EmployeePages/CustomerQuoteManager.aspx" 
+                                    Text="Customer Quotes" Value="CustomerQuoteManager"/>
+                                <asp:MenuItem NavigateUrl="~/EmployeePages/SupplierQuoteManager.aspx" 
+                                    Text="Supplier Quotes" Value="SupplierQuoteManager"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/EmployeePages/ProductManager.aspx" Text="Products" 
+                                    Value="ProductManager"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/EmployeePages/SupplierManager.aspx" 
+                                    Text="Suppliers" Value="SupplierManager"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/EmployeePages/CustomerManager.aspx" 
+                                    Text="Customers" Value="CustomerManager"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/EmployeePages/EmployeeAccount.aspx" 
+                                    Text="My Account" Value="EmployeeAccount"></asp:MenuItem>
+                            </Items>
+                            <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle BackColor="#1C5E55" />
+                        </asp:Menu>
+                    </div>
+
+                    <div style="float: left">
+                        <asp:Menu ID="ManagerNavigationMenu" runat="server" CssClass="menu" 
+                            EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
+                            ForeColor="#666666" BackColor="#E3EAEB" BorderStyle="None" 
+                            DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
+                            StaticSubMenuIndent="10px" Visible="False">
+                            <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle BackColor="#E3EAEB" />
+                            <DynamicSelectedStyle BackColor="#1C5E55" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/ManagerPages/EmployeeManager.aspx" 
+                                    Text="Employees" Value="EmployeeManager"/>
+                                <asp:MenuItem NavigateUrl="~/ManagerPages/ReportManager.aspx" Text="Reports" 
+                                    Value="ReportManager"/>
+                            </Items>
+                            <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle BackColor="#1C5E55" />
+                        </asp:Menu>
+                    </div>
+
+                    <div style="float: left">
+                        <asp:Menu ID="CustomerNavigationMenu" runat="server" CssClass="menu" 
+                            EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
+                            ForeColor="#666666" BackColor="#E3EAEB" BorderStyle="None" 
+                            DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
+                            StaticSubMenuIndent="10px" Visible="False">
+                            <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle BackColor="#E3EAEB" />
+                            <DynamicSelectedStyle BackColor="#1C5E55" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/CustomerPages/CustomerQuoteHistory.aspx" 
+                                    Text="My Quotes" Value="CustomerQuoteHistory"/>
+                                <asp:MenuItem NavigateUrl="~/CustomerPages/CustomerAccount.aspx" Text="My Account" 
+                                    Value="CustomerAccount"/>
+                            </Items>
+                            <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle BackColor="#1C5E55" />
+                        </asp:Menu>
+                    </div>
+                    
+                     
+                </div>
+            </div>
+
+        <div class="page" 
+            
+            
+            
+            
+            style="border-style: none; margin-top: 0px; margin-bottom: 0px; width: 80%; height: auto; text-align: center;">
+        
+            <div class="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </div>
+
+         
+        </div>
+   
+        <div class="footer" 
+            
+            style="background-color: #5192C6; font-family: 'Microsoft JhengHei'; font-weight: normal;">
+        
+            <table cellpadding="5" cellspacing="5" class="style12" 
+                
+                style="background-color: #598BB0; text-align: center; width: 100%; border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #FFFFFF;">
+                        <tr>
+                            <td class="style11" style="color: #000000; text-align: right;">
+                                FOLLOW US ON OUR SOCIAL ACCOUNTS:</td>
+                            <td class="style16" height="50px">
+                                <asp:ImageButton ID="ImageButton1" runat="server" Height="50px" 
+                                    ImageUrl="~/Images/icons8-facebook-50.png" Width="50px" 
+                                    onclick="ImageButton1_Click"  />   
+                            </td>
+                            <td class="style17">
+                                <asp:ImageButton ID="ImageButton2" runat="server" Height="50px" 
+                                    ImageUrl="~/Images/icons8-twitter-48.png" Width="50px" 
+                                    onclick="ImageButton2_Click" />
+                            </td>
+                            <td class="style17" height="50px" width="50px">
+                                <asp:ImageButton ID="ImageButton3" runat="server" Height="50px" 
+                                    ImageUrl="~/Images/icons8-google-plus-circled-50.png" Width="50px" 
+                                    onclick="ImageButton3_Click" />
+                            </td>
+                        </tr>
+            </table>
+        
+            <table align="center" cellpadding="0" cellspacing="5" class="style7" 
+                style="font-family: 'Microsoft JhengHei'; font-size: 1em">
+               
+                <tr>
+                    <td class="style8" 
+                        style="font-family: 'Microsoft JhengHei'; font-size: 1em; font-weight: bold; color: #000000">
+                        &nbsp;&nbsp;<asp:Image ID="Image2" runat="server" EnableTheming="True" 
+                            ImageAlign="Middle" ImageUrl="~/Images/iconfinder_HTML_Logo_65687.png" 
+                            Height="100px" Width="100px" />
+                        <br />
+                        <br />
+                        HTML5 Markup</td>
+                    <td class="style6" 
+                        style="font-family: 'Microsoft JhengHei'; font-size: 1em; font-weight: bold; color: #000000">
+                        <asp:Image ID="Image3" runat="server" ImageAlign="Middle" 
+                            ImageUrl="~/Images/iconfinder_css3_294692.png" Height="100px" 
+                            Width="100px" />
+                        <br />
+                        <br />
+                        CSS3 Styling</td>
+                    <td class="style6" 
+                        style="font-family: 'Microsoft JhengHei'; font-size: 1em; font-weight: bold; color: #000000">
+                        <asp:Image ID="Image4" runat="server" Height="100px" ImageAlign="Middle" 
+                            ImageUrl="~/Images/Normalisers42 Logo.jpg" Width="100px" />
+                        <br />
+                        <br />
+                        Website designed by Normalisers42</td>
+                </tr>
+                </table>
+        
+        
+        
+        </div>
+    </form>
+</body>
+</html>

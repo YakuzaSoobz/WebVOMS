@@ -61,11 +61,6 @@
         ConnectionString="<%$ ConnectionStrings:group16ConnectionString %>" 
         SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+    
 </asp:Content>
 
