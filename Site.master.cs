@@ -9,6 +9,7 @@ public partial class SiteMaster : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
         try
         {
             PageMenu.Initialise(Page);
@@ -17,7 +18,21 @@ public partial class SiteMaster : System.Web.UI.MasterPage
         {
             Response.Write("<script> alert('Oops page failed to load properly!')</script>");
         }
-       
+       if (Session["New"] == null)
+        {
+            lblLoggedIn.Text = "";
+            btnLogin.Visible = true;
+            btnLogout.Visible = false;
+        }
+        else
+        {
+            lblLoggedIn.Text = Session["New"].ToString();
+            btnLogin.Visible = false;
+            btnLogout.Visible = true;
+        }
+
+
+        
     }
     protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
     {
@@ -34,5 +49,31 @@ public partial class SiteMaster : System.Web.UI.MasterPage
     protected void Image1_Click(object sender, ImageClickEventArgs e)
     {
         Response.Redirect("Default.aspx");
+    }
+    protected void btnLogin_Click(object sender, EventArgs e)
+    {
+        if (Session["New"] == null)
+        {
+            Response.Redirect("~/LoginNew.aspx");
+        }
+    }
+    protected void btnLogin_Click1(object sender, EventArgs e)
+    {
+        if (Session["New"] == null)
+        {
+            Response.Redirect("~/LoginNew.aspx");
+        }
+    }
+    protected void btnLogout_Click(object sender, EventArgs e)
+    {
+        Session["New"] = null;
+        Response.Redirect("~/Default.aspx");
+    }
+    protected void btnLogin_Click2(object sender, EventArgs e)
+    {
+        if (Session["New"] == null)
+        {
+            Response.Redirect("~/LoginNew.aspx");
+        }
     }
 }

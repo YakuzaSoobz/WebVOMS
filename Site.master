@@ -74,7 +74,8 @@
                             </td>
                             <td style="width: 200px; height: 100px; text-align: center;">
                                 <div class="loginDisplay">
-                                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false" 
+                                        Visible="False">
                                         <AnonymousTemplate>
                                              <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server" style="font-size: x-large">SIGN IN</a> 
                                         </AnonymousTemplate>
@@ -170,6 +171,12 @@
                     </div>
 
                     <div style="float: left">
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" 
+                            onclick="btnLogin_Click2" />
+                        <div></div>
+                        <asp:Button ID="btnLogout" runat="server" Text="Logout" 
+                            onclick="btnLogout_Click" />
+                        <asp:Label ID="lblLoggedIn" runat="server" Text="Label"></asp:Label>
                         <asp:Menu ID="CustomerNavigationMenu" runat="server" CssClass="menu" 
                             EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
                             ForeColor="#666666" BackColor="#E3EAEB" BorderStyle="None" 
