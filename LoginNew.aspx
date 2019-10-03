@@ -78,6 +78,8 @@
     </table>
     <p>
         &nbsp;</p>
+
+    <asp:Label ID="LabelError" runat="server" Text="" ForeColor="Red"></asp:Label>
     </form>
 </body>
 </html>

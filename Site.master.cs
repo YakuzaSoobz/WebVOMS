@@ -9,7 +9,15 @@ public partial class SiteMaster : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        PageMenu.Initialise(Page);
+        try
+        {
+            PageMenu.Initialise(Page);
+        }
+        catch (Exception exception)
+        {
+            Response.Write("<script> alert('Oops page failed to load properly!')</script>");
+        }
+       
     }
     protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
     {

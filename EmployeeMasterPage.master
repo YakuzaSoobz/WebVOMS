@@ -149,47 +149,9 @@
                     </div>
 
                     <div style="float: left">
-                        <asp:Menu ID="ManagerNavigationMenu" runat="server" CssClass="menu" 
-                            EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
-                            ForeColor="#666666" BackColor="#E3EAEB" BorderStyle="None" 
-                            DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
-                            StaticSubMenuIndent="10px" Visible="False">
-                            <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
-                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                            <DynamicMenuStyle BackColor="#E3EAEB" />
-                            <DynamicSelectedStyle BackColor="#1C5E55" />
-                            <Items>
-                                <asp:MenuItem NavigateUrl="~/ManagerPages/EmployeeManager.aspx" 
-                                    Text="Employees" Value="EmployeeManager"/>
-                                <asp:MenuItem NavigateUrl="~/ManagerPages/ReportManager.aspx" Text="Reports" 
-                                    Value="ReportManager"/>
-                            </Items>
-                            <StaticHoverStyle BackColor="#666666" ForeColor="White" />
-                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                            <StaticSelectedStyle BackColor="#1C5E55" />
-                        </asp:Menu>
                     </div>
 
                     <div style="float: left">
-                        <asp:Menu ID="CustomerNavigationMenu" runat="server" CssClass="menu" 
-                            EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
-                            ForeColor="#666666" BackColor="#E3EAEB" BorderStyle="None" 
-                            DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
-                            StaticSubMenuIndent="10px" Visible="False">
-                            <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
-                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                            <DynamicMenuStyle BackColor="#E3EAEB" />
-                            <DynamicSelectedStyle BackColor="#1C5E55" />
-                            <Items>
-                                <asp:MenuItem NavigateUrl="~/CustomerPages/CustomerQuoteHistory.aspx" 
-                                    Text="My Quotes" Value="CustomerQuoteHistory"/>
-                                <asp:MenuItem NavigateUrl="~/CustomerPages/CustomerAccount.aspx" Text="My Account" 
-                                    Value="CustomerAccount"/>
-                            </Items>
-                            <StaticHoverStyle BackColor="#666666" ForeColor="White" />
-                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                            <StaticSelectedStyle BackColor="#1C5E55" />
-                        </asp:Menu>
                     </div>
                     
                      
