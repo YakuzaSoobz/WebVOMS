@@ -3,18 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <asp:GridView ID="GridView1" runat="server" AllowSorting="True" 
+   
+    <asp:GridView ID="CustomerQuoteGridView" runat="server" AllowSorting="True" 
         AutoGenerateColumns="False" CellPadding="4" 
         DataKeyNames="Cust_Quote_Reference_ID" DataSourceID="SQLQuote" 
-        ForeColor="#333333" GridLines="None" Width="1106px">
+        ForeColor="#333333" GridLines="None" Width="1106px" 
+        HorizontalAlign="Center" AllowPaging="True">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Cust_Quote_Reference_ID" HeaderText="Reference ID" 

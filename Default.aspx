@@ -14,7 +14,7 @@
         }
         .style23
         {
-            height: 102px;
+            height: 103px;
         }
     </style>
 </asp:Content>
@@ -37,11 +37,11 @@
                         On products only from Makro!</p>
                     <p style="padding: 0px; margin: 0px">
                         &nbsp;</p>
-                    <p style="padding: 0px; margin: 0px">
-                        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" 
+                    <div style="padding: 0px; margin: 0px; text-align: center;">
+                        <asp:GridView ID="AdvertisedProductsGridView" runat="server" AllowSorting="True" 
                             AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Product_ID" 
                             DataSourceID="SQLAllProduct" ForeColor="#333333" GridLines="None" 
-                            Width="1308px">
+                            Width="1119px" HorizontalAlign="Center">
                             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                             <Columns>
                                 <asp:BoundField DataField="Product_ID" HeaderText="ID" InsertVisible="False" 
@@ -72,9 +72,7 @@
                                 <asp:Parameter DefaultValue="T" Name="Product_Active_Status" Type="String" />
                             </SelectParameters>
                         </asp:SqlDataSource>
-                    </p>
-                    <p style="padding: 0px; margin: 0px">
-                        &nbsp;</p>
+                    </div>
                     <p style="padding: 0px; margin: 0px">
                         &nbsp;</p>
                 </td>

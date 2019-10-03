@@ -9,8 +9,16 @@ public partial class SiteMaster : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        PageMenu.Initialise(Page);
-        if (Session["New"] == null)
+
+        try
+        {
+            PageMenu.Initialise(Page);
+        }
+        catch (Exception exception)
+        {
+            Response.Write("<script> alert('Oops page failed to load properly!')</script>");
+        }
+       if (Session["New"] == null)
         {
             lblLoggedIn.Text = "";
             btnLogin.Visible = true;
@@ -23,6 +31,8 @@ public partial class SiteMaster : System.Web.UI.MasterPage
             btnLogout.Visible = true;
         }
 
+
+        
     }
     protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
     {

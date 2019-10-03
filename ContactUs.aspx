@@ -17,14 +17,18 @@
             width: 294px;
             height: 46px;
         }
+        #CustomerEmailAddress
+        {
+            width: 294px;
+        }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server" >
 
     
 
     <div style="text-align: center;width: 400px; margin: 0 auto;">
-        <h2 style="font-size: x-large; font-weight: bold; text-decoration: underline;">
+        <h2 style="font-size: x-large; text-decoration: underline;">
             Contact us For a Quotation:
         </h2>
         <ul compact="compact" 
@@ -39,7 +43,7 @@
         <br />
     </div>
 
-    <div class = "Quote" style="padding: 5px; text-align: left; width: 300px; margin: 0 auto; height: 226px; background-color: #598DB6; color: #FFFFFF;">
+    <div class = "Quote" style="padding: 0px; text-align: left; width: 300px; margin: 0 auto; height: 226px; background-color: #598DB6; color: #FFFFFF;">
         <h3 style="font-size: medium; font-weight: bold; color: #FFFFFF; text-decoration: underline;">
             Email Us:
         </h3>
@@ -49,7 +53,8 @@
                 <br />
                 <label style="background-color: #598DB6">Email:</label><br />
                 
-                <input id="CustomerEmailAddress" type="text" /><br />
+                <input id="CustomerEmailAddress" type="text" 
+                    style="width: 296px; font-weight: 700;" /><br />
                 <br />
                 Message<label>:</label><br />
                 <textarea id="CustomerMessageTextArea" rows = "10" cols = "10"></textarea>
