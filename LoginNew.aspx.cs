@@ -35,7 +35,7 @@ public partial class LoginNew : System.Web.UI.Page
                 string password = passComm.ExecuteScalar().ToString().Trim();
                 if (password == TextBoxPassword.Text.Trim())
                 {
-                    Session["New"] = TextBoxUserName.Text;
+                    Session["New"] = TextBoxUserName.Text;   
                     Response.Redirect("~/Default.aspx");
 
                 }
