@@ -76,4 +76,8 @@ public partial class SiteMaster : System.Web.UI.MasterPage
             Response.Redirect("~/LoginNew.aspx");
         }
     }
+    protected void HeadLoginStatus_LoggingOut(object sender, LoginCancelEventArgs e)
+    {
+
+    }
 }
