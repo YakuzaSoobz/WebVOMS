@@ -67,12 +67,14 @@ public partial class LoginNew : System.Web.UI.Page
                         if(empRole.Equals("Manager"))
                         {
                             Session["New"] = TextBoxUserName.Text;
-                            Response.Redirect("~/Default.aspx");
+                            Session["Role"] = "Manager";
+                            Response.Redirect("~/ManagerPages/EmployeeManager.aspx");
                         }
                         else
                         {
                             Session["New"] = TextBoxUserName.Text;
-                            Response.Redirect("~/Default.aspx");
+                            Session["Role"] = "Employee";
+                            Response.Redirect("~/EmployeePages/CustomerManager.aspx");
                         }
 
                         

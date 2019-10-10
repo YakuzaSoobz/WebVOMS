@@ -153,6 +153,12 @@
                     </div>
                     
                      
+                    <asp:Button ID="btnLogin" runat="server" onclick="btnLogin_Click" 
+                        Text="Login" />
+                    <asp:Button ID="btnLogout" runat="server" onclick="btnLogout_Click" 
+                        Text="Logout" />
+                    
+                     
                 </div>
             </div>
 

@@ -12,6 +12,14 @@ public partial class EmployeeMasterPage : System.Web.UI.MasterPage
         try
         {
             PageMenu.Initialise(Page);
+            if (Session["Role"].ToString().Equals("Manager"))
+            {
+                
+            }
+            else 
+            {
+                ManagerNavigationMenu.Visible = false;
+            }
         }
         catch (Exception exception)
         {
