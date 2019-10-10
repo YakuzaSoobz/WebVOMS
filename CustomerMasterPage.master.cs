@@ -12,6 +12,16 @@ public partial class CustomerMasterPage : System.Web.UI.MasterPage
         try
         {
             PageMenu.Initialise(Page);
+            if (Session["New"].Equals(""))
+            {
+                lblPrefix.Text = "";
+                lblUser.Text = "";
+            }
+            else
+            {
+                lblPrefix.Text = "User Logged In is : ";
+                lblUser.Text = Session["New"].ToString();
+            }
         }
         catch (Exception exception)
         {

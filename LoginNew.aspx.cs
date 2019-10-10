@@ -35,8 +35,8 @@ public partial class LoginNew : System.Web.UI.Page
                 string password = passComm.ExecuteScalar().ToString().Trim();
                 if (password == TextBoxPassword.Text.Trim())
                 {
-                    Session["New"] = TextBoxUserName.Text;   
-                    Response.Redirect("~/Default.aspx");
+                    Session["New"] = TextBoxUserName.Text;
+                    Response.Redirect("~/CustomerPages/CustomerAccount.aspx");
 
                 }
                 else
@@ -45,6 +45,45 @@ public partial class LoginNew : System.Web.UI.Page
                     Response.Write("Password is not correct");
                 }
 
+            }
+            else if(temp != 1)
+            {
+                conn.Open();
+                checkuser = "Select count(*) from Employee where Employee_Email='" + TextBoxUserName.Text + "'";
+                com = new SqlCommand(checkuser, conn);
+                temp = Convert.ToInt32(com.ExecuteScalar().ToString());
+                conn.Close();
+                if(temp==1)
+                {
+                    conn.Open();
+                    string checkPasswordQuery = "SELECT Employee_Password FROM Employee where Employee_Email='" + TextBoxUserName.Text + "'";
+                    SqlCommand passComm = new SqlCommand(checkPasswordQuery, conn);
+                    string password = passComm.ExecuteScalar().ToString().Trim();
+                    if (password == TextBoxPassword.Text.Trim())
+                    {
+                        string getEmpRole = "SELECT Employee_Position FROM Employee where Employee_Email='" + TextBoxUserName.Text + "'";
+                        SqlCommand empCom = new SqlCommand(getEmpRole, conn);
+                        string empRole = empCom.ExecuteScalar().ToString().Trim();
+                        if(empRole.Equals("Manager"))
+                        {
+                            Session["New"] = TextBoxUserName.Text;
+                            Response.Redirect("~/Default.aspx");
+                        }
+                        else
+                        {
+                            Session["New"] = TextBoxUserName.Text;
+                            Response.Redirect("~/Default.aspx");
+                        }
+
+                        
+
+                    }
+                    else
+                    {
+
+                        Response.Write("Password is not correct");
+                    }
+                }
             }
             else
             {

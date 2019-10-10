@@ -75,9 +75,11 @@
                             </td>
                             <td style="width: 200px; height: 100px; text-align: center;">
                                 <div class="loginDisplay">
-                                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false" 
+                                        Visible="False">
                                         <AnonymousTemplate>
-                                             <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server" style="font-size: x-large">SIGN IN</a> 
+                                             <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server" 
+                                                 style="font-size: x-large" visible="False">SIGN IN</a> 
                                         </AnonymousTemplate>
                                         <LoggedInTemplate>
                                         

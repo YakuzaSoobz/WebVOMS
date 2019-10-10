@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="SupplierQuoteManager.aspx.cs" Inherits="EmployeePages_SupplierQuoteManager" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EmployeeMasterPage.master" AutoEventWireup="true" CodeFile="SupplierQuoteManager.aspx.cs" Inherits="EmployeePages_SupplierQuoteManager" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
