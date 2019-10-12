@@ -17,6 +17,7 @@
             AutoPostBack="True" 
             onselectedindexchanged="DropDownListReportSelect_SelectedIndexChanged" 
             Width="400px">
+            <asp:ListItem>~Select a Report~</asp:ListItem>
             <asp:ListItem>Total Product Sales</asp:ListItem>
             <asp:ListItem>Total Value Of Sales Per Item For Select Month</asp:ListItem>
             <asp:ListItem>Total Supplier Cost</asp:ListItem>

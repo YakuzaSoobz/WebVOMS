@@ -25,15 +25,58 @@ public partial class ManagerPages_ReportManager : System.Web.UI.Page
     {
         try
         {
-             if (DropDownListReportSelect.SelectedIndex == 0)
+             if (DropDownListReportSelect.SelectedIndex == 1)
             {
                 
-                ReportDescription.InnerHtml = "Report Ojndadfsssssssssssssssssssssssss ssssssssssssssss  sdddddddddddddddddddddddddd  ddddddddddd";
+                ReportDescription.InnerHtml = "The Total Sales per Product for a selected Time period";
             }
-            else if (DropDownListReportSelect.SelectedIndex == 0)
-            {
-                ReportDescription.InnerHtml = "Report Ojndadfsssssssssssssssssssssssss ssssssssssssssss  sdddddddddddddddddddddddddd  ddddddddddd";
-            }
+             if (DropDownListReportSelect.SelectedIndex == 2)
+             {
+
+                 ReportDescription.InnerHtml = "Total sales per item for a select month";
+             }
+
+             if (DropDownListReportSelect.SelectedIndex == 3)
+             {
+
+                 ReportDescription.InnerHtml = "Total cost per supplier based on quotations, for a selected time period";
+             }
+
+             if (DropDownListReportSelect.SelectedIndex == 4)
+             {
+
+                 ReportDescription.InnerHtml = "How much employees have sold per product";
+             }
+
+             if (DropDownListReportSelect.SelectedIndex == 5)
+             {
+
+                 ReportDescription.InnerHtml = "The total sales amount per Suburb ";
+             }
+
+             if (DropDownListReportSelect.SelectedIndex == 6)
+             {
+
+                 ReportDescription.InnerHtml = "Shows the products sold per employee for each month for the last year(12 months)";
+             }
+
+             if (DropDownListReportSelect.SelectedIndex == 7)
+             {
+
+                 ReportDescription.InnerHtml = "Shows the products sold for each month for the last year(12 months)";
+             }
+
+             if (DropDownListReportSelect.SelectedIndex == 8)
+             {
+
+                 ReportDescription.InnerHtml = "Shows the Quotations accepted for each month";
+             }
+
+             if (DropDownListReportSelect.SelectedIndex == 9)
+             {
+
+                 ReportDescription.InnerHtml = "Show Value of accepted Customer quotes per customer";
+             }
         }
         catch (Exception exception)
         {
@@ -45,95 +88,67 @@ public partial class ManagerPages_ReportManager : System.Web.UI.Page
     {
         try
         {
-            if (DropDownListReportSelect.SelectedIndex == 0)
+            if (DropDownListReportSelect.SelectedIndex == 1)
             {
 
                 Response.Redirect("~/TotalProductSalesForm.aspx");
             }
-            else if (DropDownListReportSelect.SelectedIndex == 0)
-            {
-                ReportDescription.InnerHtml = "Report Ojndadfsssssssssssssssssssssssss ssssssssssssssss  sdddddddddddddddddddddddddd  ddddddddddd";
-            }
-
-            if (DropDownListReportSelect.SelectedIndex == 1)
-            {
-
-                Response.Redirect("~/TotalValueOfSalesForSelectMonth.aspx");
-            }
-            else if (DropDownListReportSelect.SelectedIndex == 1)
-            {
-                ReportDescription.InnerHtml = "Report Ojndadfsssssssssssssssssssssssss ssssssssssssssss  sdddddddddddddddddddddddddd  ddddddddddd";
-            }
+            
 
             if (DropDownListReportSelect.SelectedIndex == 2)
             {
 
-                Response.Redirect("~/TotalSupplierCostPerSupplierForm.aspx");
+                Response.Redirect("~/TotalValueOfSalesForSelectMonth.aspx");
             }
-            else if (DropDownListReportSelect.SelectedIndex == 2)
-            {
-                ReportDescription.InnerHtml = "Report Ojndadfsssssssssssssssssssssssss ssssssssssssssss  sdddddddddddddddddddddddddd  ddddddddddd";
-            }
+            
 
             if (DropDownListReportSelect.SelectedIndex == 3)
             {
 
-                Response.Redirect("~/EmployeeSalesPerProduct.aspx");
+                Response.Redirect("~/TotalSupplierCostPerSupplierForm.aspx");
             }
-            else if (DropDownListReportSelect.SelectedIndex == 3)
-            {
-                ReportDescription.InnerHtml = "Report Ojndadfsssssssssssssssssssssssss ssssssssssssssss  sdddddddddddddddddddddddddd  ddddddddddd";
-            }
-
+            
             if (DropDownListReportSelect.SelectedIndex == 4)
             {
 
-                Response.Redirect("~/TotalSalesPerSuburbForm.aspx");
+                Response.Redirect("~/EmployeeSalesPerProduct.aspx");
             }
-            else if (DropDownListReportSelect.SelectedIndex == 4)
-            {
-                ReportDescription.InnerHtml = "Report Ojndadfsssssssssssssssssssssssss ssssssssssssssss  sdddddddddddddddddddddddddd  ddddddddddd";
-            }
+            
 
             if (DropDownListReportSelect.SelectedIndex == 5)
             {
 
-                Response.Redirect("~/AmountOfProductsSoldPerEmployeeForLastYearForm.aspx");
+                Response.Redirect("~/TotalSalesPerSuburbForm.aspx");
             }
-            else if (DropDownListReportSelect.SelectedIndex == 5)
-            {
-                ReportDescription.InnerHtml = "Report Ojndadfsssssssssssssssssssssssss ssssssssssssssss  sdddddddddddddddddddddddddd  ddddddddddd";
-            }
+            
 
             if (DropDownListReportSelect.SelectedIndex == 6)
             {
 
-                Response.Redirect("~/ProductsSoldPerMonthForLastYearForm.aspx");
+                Response.Redirect("~/AmountOfProductsSoldPerEmployeeForLastYearForm.aspx");
             }
-            else if (DropDownListReportSelect.SelectedIndex == 6)
-            {
-                ReportDescription.InnerHtml = "Report Ojndadfsssssssssssssssssssssssss ssssssssssssssss  sdddddddddddddddddddddddddd  ddddddddddd";
-            }
+           
 
             if (DropDownListReportSelect.SelectedIndex == 7)
             {
 
-                Response.Redirect("~/QuotationsPerMonth.aspx");
+                Response.Redirect("~/ProductsSoldPerMonthForLastYearForm.aspx");
             }
-            else if (DropDownListReportSelect.SelectedIndex == 7)
-            {
-                ReportDescription.InnerHtml = "Report Ojndadfsssssssssssssssssssssssss ssssssssssssssss  sdddddddddddddddddddddddddd  ddddddddddd";
-            }
+           
 
             if (DropDownListReportSelect.SelectedIndex == 8)
             {
 
+                Response.Redirect("~/QuotationsPerMonth.aspx");
+            }
+           
+
+            if (DropDownListReportSelect.SelectedIndex == 9)
+            {
+
                 Response.Redirect("~/CustomerIncome.aspx");
             }
-            else if (DropDownListReportSelect.SelectedIndex == 8)
-            {
-                ReportDescription.InnerHtml = "Report Ojndadfsssssssssssssssssssssssss ssssssssssssssss  sdddddddddddddddddddddddddd  ddddddddddd";
-            }
+            
         }
         catch (Exception exception)
         {
