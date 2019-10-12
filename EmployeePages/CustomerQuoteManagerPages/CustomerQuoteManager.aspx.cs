@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 public partial class EmployeePages_CustomerQuoteManager : System.Web.UI.Page
 {
@@ -16,20 +17,68 @@ public partial class EmployeePages_CustomerQuoteManager : System.Web.UI.Page
         
     }
 
-    protected void CustomerQuoteGridView_SelectedIndexChanged(object sender, EventArgs e)
+
+
+
+
+    protected void ButtonSearch_Click(object sender, EventArgs e)
     {
+        try
+        {
+            if (DropDownListSearch.SelectedIndex == 0)
+            {
+                int parsedValue;
+                if (!int.TryParse(TextBoxSearch.Text, out parsedValue))
+                {
+                    string script = "alert(\"Only integers can be searched!\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                }
+                else
+                {
+                    SqlDataSourceCustomerQuoteJoinCustomer.FilterExpression = "Cust_Quote_Reference_ID  = {0}";
+                    SqlDataSourceCustomerQuoteJoinCustomer.FilterParameters.Add(new ControlParameter("Cust_Quote_Reference_ID", "TextBoxSearch", "Text"));
+                }
+
+
+            }
+            else if (DropDownListSearch.SelectedIndex == 1)
+            {
+                SqlDataSourceCustomerQuoteJoinCustomer.FilterExpression = "Cust_FName like '{0}%' OR Cust_SName LIKE '{1}%'";
+                SqlDataSourceCustomerQuoteJoinCustomer.FilterParameters.Add(new ControlParameter("Cust_FName", "TextBoxSearch", "Text"));
+                SqlDataSourceCustomerQuoteJoinCustomer.FilterParameters.Add(new ControlParameter("Cust_SName", "TextBoxSearch", "Text"));
+            }
+            else if (DropDownListSearch.SelectedIndex == 2)
+            {
+                SqlDataSourceCustomerQuoteJoinCustomer.FilterExpression = "Employee_FName like '{0}%' OR Employee_SName like '{1}%'";
+                SqlDataSourceCustomerQuoteJoinCustomer.FilterParameters.Add(new ControlParameter("Employee_FName", "TextBoxSearch", "Text"));
+                SqlDataSourceCustomerQuoteJoinCustomer.FilterParameters.Add(new ControlParameter("Employee_SName", "TextBoxSearch", "Text"));
+            }
+        }
+        catch (SqlException sqlEx)
+        {
+
+            string script = "alert(\"oops an error occured while trying to connect to the database!\");";
+            ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+        }
+
         
     }
-    protected void CreateNewQuoteButton_Click(object sender, EventArgs e)
+    protected void ButtonRefresh_Click(object sender, EventArgs e)
     {
-        CreateStatus = true;
-        EditStatus = false;
-        Response.Redirect("CreateOrEditCustomerQuote.aspx");
-    }
-    protected void EditQuoteButton_Click(object sender, EventArgs e)
-    {
-        CreateStatus = false;
-        EditStatus = true;
-        Response.Redirect("CreateOrEditCustomerQuote.aspx");
+        try
+        {
+            
+
+            SqlDataSourceCustomerQuoteJoinCustomer.FilterExpression = "Cust_FName like '%' ";
+           
+        }
+        catch (SqlException sqlEx)
+        {
+
+            string script = "alert(\"Oops an error occured while trying to connect to the database!\");";
+            ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+
+            TextBoxSearch.Text = "";
+        }
     }
 }
