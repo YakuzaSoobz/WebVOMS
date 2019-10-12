@@ -17,11 +17,25 @@
             AutoPostBack="True" 
             onselectedindexchanged="DropDownListReportSelect_SelectedIndexChanged" 
             Width="400px">
-            <asp:ListItem>Report One</asp:ListItem>
-            <asp:ListItem>Report Two</asp:ListItem>
-            <asp:ListItem>Report Three</asp:ListItem>
+            <asp:ListItem>~Select a Report~</asp:ListItem>
+            <asp:ListItem>Total Product Sales</asp:ListItem>
+            <asp:ListItem>Total Value Of Sales Per Item For Select Month</asp:ListItem>
+            <asp:ListItem>Total Supplier Cost</asp:ListItem>
+            
+            <asp:ListItem>Employee Sales Per Product</asp:ListItem>
+            <asp:ListItem>Total Sales Per Suburb</asp:ListItem>
+            <asp:ListItem>Rolling Year Sales Per Employee</asp:ListItem>
+            <asp:ListItem>Products Sold per Month Rolling Year</asp:ListItem>
+            <asp:ListItem>Quotations Per Month</asp:ListItem>
+            <asp:ListItem>Customer Sales income</asp:ListItem>
             
         </asp:DropDownList>
+
+                            <asp:Button ID="ViewReportButton" runat="server" BackColor="#5D7B9D" 
+                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="40px" 
+                        Text="View Report" Width="200px" 
+            onclick="ViewReportButton_Click" />
+                
     </div>
 
     <br />
