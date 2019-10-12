@@ -17,6 +17,32 @@
            Customer Quote Manager:
     </h2>
     
+            <table class="style18">
+            <tr>
+                <td width="80%" height="30px" >
+                    <asp:DropDownList ID="DropDownListSearch" runat="server" AutoPostBack="True">
+                        <asp:ListItem>Quote Reference ID</asp:ListItem>
+                        <asp:ListItem>Customer  Name</asp:ListItem>
+                        <asp:ListItem>Employee Name</asp:ListItem>
+                    </asp:DropDownList>
+
+                <asp:TextBox ID="TextBoxSearch" runat="server" Width="200px" Height="30px"></asp:TextBox>
+                    <asp:Button ID="ButtonSearch" runat="server" BackColor="#5D7B9D" 
+                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px" 
+                        Text="Search" Width="70px" onclick="ButtonSearch_Click" 
+                         />
+                        
+                    <asp:Button ID="ButtonRefresh" runat="server" BackColor="#5D7B9D" 
+                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px" 
+                        Text="Refresh" Width="70px" onclick="ButtonRefresh_Click" />
+                        
+                </td>
+              
+                
+            </tr>
+        </table>
+    
+
     <h2 style="font-size: medium; ">
           Select a Customer Quote:
     </h2>
@@ -27,7 +53,7 @@
         DataKeyNames="Cust_Quote_Reference_ID" DataSourceID="SqlDataSourceCustomerQuoteJoinCustomer" 
         ForeColor="#333333" GridLines="None" Width="1106px" 
         HorizontalAlign="Center" AllowPaging="True" 
-        onselectedindexchanged="CustomerQuoteGridView_SelectedIndexChanged">
+        >
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Cust_Quote_Reference_ID" HeaderText="Reference ID" 
@@ -35,15 +61,11 @@
             <asp:BoundField DataField="Cust__Quote_Total_Price" HeaderText="Total Price" 
                 SortExpression="Cust__Quote_Total_Price" />
             <asp:BoundField DataField="Cust_Quote_Date_Issued" HeaderText="Date Issued" 
-                SortExpression="Cust_Quote_Date_Issued" />
+                SortExpression="Cust_Quote_Date_Issued" DataFormatString="{0:d}" />
             <asp:BoundField DataField="Cust_Quote_Acceptance_Status" 
                 HeaderText="Acceptance Status" SortExpression="Cust_Quote_Acceptance_Status" />
             <asp:BoundField DataField="Cust_Quote_Date_Accepted" HeaderText="Date Accepted" 
-                SortExpression="Cust_Quote_Date_Accepted" />
-            <asp:BoundField DataField="Customer_ID" HeaderText="Customer ID" 
-                SortExpression="Customer_ID" />
-            <asp:BoundField DataField="Employee_ID" HeaderText="Employee ID" 
-                SortExpression="Employee_ID" />
+                SortExpression="Cust_Quote_Date_Accepted" DataFormatString="{0:d}" />
             <asp:BoundField DataField="Cust_FName" HeaderText="Customer First Name" 
                 SortExpression="Cust_FName" />
             <asp:BoundField DataField="Cust_SName" HeaderText="Customer Surname" 
@@ -84,10 +106,10 @@
         DataKeyNames="Product_ID,Cust_Quote_Reference_ID,Supplier_ID" DataSourceID="SqlDataSourceCustLineItemsJoinProducts" 
         ForeColor="#333333" GridLines="None" Width="1106px" 
         HorizontalAlign="Center" AllowPaging="True" 
-        onselectedindexchanged="CustomerQuoteGridView_SelectedIndexChanged">
+       >
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:BoundField DataField="Cust_Quote_Reference_ID" HeaderText="Quote Reference ID" 
+            <asp:BoundField DataField="Cust_Quote_Reference_ID" HeaderText="Reference ID" 
                 ReadOnly="True" SortExpression="Cust_Quote_Reference_ID" />
             <asp:BoundField DataField="Product_Name" HeaderText="Product" 
                 SortExpression="Product_Name" />
@@ -137,26 +159,6 @@
     </div>
 
     <div>   
-        <table class="style18">
-            <tr>
-                <td width="33%">
-                    <asp:Button ID="CreateNewQuoteButton" runat="server" BackColor="#5D7B9D" 
-                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="40px" 
-                        Text="Create New Customer Quote" Width="200px" 
-                        onclick="CreateNewQuoteButton_Click" />
-                </td>
-                <td width="33%">
-                    <asp:Button ID="EditQuoteButton" runat="server" BackColor="#5D7B9D" 
-                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="40px" 
-                        Text="Edit Customer Quote" Width="200px" onclick="EditQuoteButton_Click" />
-                </td>
-                <td width="33%">
-                    <asp:Button ID="ViewQuoteButton" runat="server" BackColor="#5D7B9D" 
-                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="40px" 
-                        Text="View Quote" Width="200px" />
-                </td>
-            </tr>
-        </table>
     </div>
     
 </asp:Content>
