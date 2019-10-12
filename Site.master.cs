@@ -13,23 +13,24 @@ public partial class SiteMaster : System.Web.UI.MasterPage
         try
         {
             PageMenu.Initialise(Page);
+            if (Session["New"] == null)
+            {
+                lblLoggedIn.Text = "";
+                btnLogin.Visible = true;
+                btnLogout.Visible = false;
+            }
+            else
+            {
+                lblLoggedIn.Text = Session["New"].ToString();
+                btnLogin.Visible = false;
+                btnLogout.Visible = true;
+            }
         }
         catch (Exception exception)
         {
             Response.Write("<script> alert('Oops page failed to load properly!')</script>");
         }
-       if (Session["New"] == null)
-        {
-            lblLoggedIn.Text = "";
-            btnLogin.Visible = true;
-            btnLogout.Visible = false;
-        }
-        else
-        {
-            lblLoggedIn.Text = Session["New"].ToString();
-            btnLogin.Visible = false;
-            btnLogout.Visible = true;
-        }
+       
 
 
         
