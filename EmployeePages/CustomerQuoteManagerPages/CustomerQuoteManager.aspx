@@ -29,12 +29,12 @@
                 <asp:TextBox ID="TextBoxSearch" runat="server" Width="200px" Height="30px"></asp:TextBox>
                     <asp:Button ID="ButtonSearch" runat="server" BackColor="#5D7B9D" 
                         BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px" 
-                        Text="Search" Width="70px" onclick="ButtonSearch_Click" 
+                        Text="Search" Width="70px" 
                          />
                         
                     <asp:Button ID="ButtonRefresh" runat="server" BackColor="#5D7B9D" 
                         BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px" 
-                        Text="Refresh" Width="70px" onclick="ButtonRefresh_Click" />
+                        Text="Refresh" Width="70px"  />
                         
                 </td>
               
