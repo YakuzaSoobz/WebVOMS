@@ -89,8 +89,7 @@
                                         </LoggedInTemplate>
                                     </asp:LoginView>
                                     <asp:Label ID="Label1" runat="server" Text="Not Registered Yet?"></asp:Label>
-                                    <asp:HyperLink ID="HyperLink1" runat="server" Text=" Click Here" 
-                                        NavigateUrl="~/Registration.aspx"></asp:HyperLink>
+                                    <asp:HyperLink ID="HyperLink1" runat="server" Text=" Click Here"></asp:HyperLink>
                                 </div>
                             </td>
                         </tr>
