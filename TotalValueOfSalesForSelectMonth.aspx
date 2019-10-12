@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ManagerMasterPage.master" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EmployeeMasterPage.master" %>
 
 <%@ Register assembly="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" namespace="CrystalDecisions.Web" tagprefix="CR" %>
 

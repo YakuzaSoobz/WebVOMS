@@ -5,18 +5,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True"
+   
+   <div style="overflow: scroll">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True"
         AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Customer_ID" DataSourceID="SQLCustomerManager"
         ForeColor="#333333" GridLines="None" Width="1173px" ShowFooter="True">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-            <asp:TemplateField HeaderText="Customer_ID" InsertVisible="False" SortExpression="Customer_ID">
+            <asp:CommandField ShowEditButton="True" />
+            <asp:TemplateField HeaderText="Customer ID" InsertVisible="False" 
+                SortExpression="Customer_ID">
                 <EditItemTemplate>
                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("Customer_ID") %>'></asp:Label>
                 </EditItemTemplate>
@@ -27,7 +25,7 @@
                     <asp:LinkButton ValidationGroup="INSERT" ID="lbInsert"  runat="server" Text="Insert">Insert</asp:LinkButton>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_FName" SortExpression="Cust_FName">
+            <asp:TemplateField HeaderText="Name" SortExpression="Cust_FName">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Cust_FName") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditName" runat="server" ErrorMessage="Name is a required field" ControlToValidate = "TextBox1" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -40,7 +38,7 @@
                     <asp:RequiredFieldValidator ID="rfvInsertName" ValidationGroup="INSERT" runat="server" ErrorMessage="Name is a required field" ControlToValidate = "txtFName" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_SName" SortExpression="Cust_SName">
+            <asp:TemplateField HeaderText="Surname" SortExpression="Cust_SName">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Cust_SName") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditSurame" runat="server" ErrorMessage="Surname is a required field" ControlToValidate = "TextBox2" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -53,7 +51,7 @@
                     <asp:RequiredFieldValidator ID="rfvInsertSurname" ValidationGroup="INSERT" runat="server" ErrorMessage="Surname is a required field" ControlToValidate = "txtSurname" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_DOB" SortExpression="Cust_DOB">
+            <asp:TemplateField HeaderText="DOB" SortExpression="Cust_DOB">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Cust_DOB") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditDOB" runat="server" ErrorMessage="DOB is a required field" ControlToValidate = "TextBox3" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -66,7 +64,7 @@
                     <asp:RequiredFieldValidator ID="rfvInsertDOB" ValidationGroup="INSERT" runat="server" ErrorMessage="DOB is a required field" ControlToValidate = "txtDOB" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_Phone_No" SortExpression="Cust_Phone_No">
+            <asp:TemplateField HeaderText="Phone No" SortExpression="Cust_Phone_No">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Cust_Phone_No") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditPhoneNo" runat="server" ErrorMessage="Phone No. is a required field" ControlToValidate = "TextBox4" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -79,7 +77,7 @@
                     <asp:RequiredFieldValidator ID="rfvInsertPhoneNo" ValidationGroup="INSERT" runat="server" ErrorMessage="Phone No. is a required field" ControlToValidate = "txtCustPhone" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_Alt_Phone_No" SortExpression="Cust_Alt_Phone_No">
+            <asp:TemplateField HeaderText="Alt Phone No" SortExpression="Cust_Alt_Phone_No">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("Cust_Alt_Phone_No") %>'></asp:TextBox>
                 </EditItemTemplate>
@@ -87,10 +85,10 @@
                     <asp:Label ID="Label6" runat="server" Text='<%# Bind("Cust_Alt_Phone_No") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="txtCustAltPhone" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCustAltPhone" runat="server"> </asp:TextBox>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_Email" SortExpression="Cust_Email">
+            <asp:TemplateField HeaderText="Email" SortExpression="Cust_Email">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("Cust_Email") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditEmail" runat="server" ErrorMessage="Email is a required field" ControlToValidate = "TextBox6" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -103,7 +101,7 @@
                     <asp:RequiredFieldValidator ID="rfvInsertEmail" ValidationGroup="INSERT" runat="server" ErrorMessage="Email is a required field" ControlToValidate = "txtEmail" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_Password" SortExpression="Cust_Password">
+            <asp:TemplateField HeaderText="Password" SortExpression="Cust_Password">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Cust_Password") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditPassword" runat="server" ErrorMessage="Password is a required field" ControlToValidate = "TextBox7" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -116,7 +114,7 @@
                     <asp:RequiredFieldValidator ID="rfvInsertPassword" ValidationGroup="INSERT" runat="server" ErrorMessage="Password is a required field" ControlToValidate = "txtPassword" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_Street_Addr_1" SortExpression="Cust_Street_Addr_1">
+            <asp:TemplateField HeaderText="Address " SortExpression="Cust_Street_Addr_1">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("Cust_Street_Addr_1") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditStrAdd" runat="server" ErrorMessage="Street Address is a required field" ControlToValidate = "TextBox8" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -129,7 +127,8 @@
                     <asp:RequiredFieldValidator ID="rfvInsertStrAdd" ValidationGroup="INSERT" runat="server" ErrorMessage="Street Address is a required field" ControlToValidate = "txtCustStrAddress" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_Street_Addr_2" SortExpression="Cust_Street_Addr_2">
+            <asp:TemplateField HeaderText="Alternate Address" 
+                SortExpression="Cust_Street_Addr_2">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("Cust_Street_Addr_2") %>'></asp:TextBox>
                 </EditItemTemplate>
@@ -140,7 +139,7 @@
                     <asp:TextBox ID="txtCustStrAddress2" runat="server"></asp:TextBox>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_Suburb" SortExpression="Cust_Suburb">
+            <asp:TemplateField HeaderText="Suburb" SortExpression="Cust_Suburb">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox10" runat="server" Text='<%# Bind("Cust_Suburb") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditSuburb" runat="server" ErrorMessage="Suburb is a required field" ControlToValidate = "TextBox10" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -153,7 +152,7 @@
                     <asp:RequiredFieldValidator ID="rfvInsertSuburb" ValidationGroup="INSERT" runat="server" ErrorMessage="Suburb is a required field" ControlToValidate = "txtSuburb" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_City" SortExpression="Cust_City">
+            <asp:TemplateField HeaderText="City" SortExpression="Cust_City">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox11" runat="server" Text='<%# Bind("Cust_City") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditCity" runat="server" ErrorMessage="City is a required field" ControlToValidate = "TextBox11" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -166,7 +165,7 @@
                     <asp:RequiredFieldValidator ID="rfvInsertCity" ValidationGroup="INSERT" runat="server" ErrorMessage="City is a required field" ControlToValidate = "txtCity" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_Province" SortExpression="Cust_Province">
+            <asp:TemplateField HeaderText="Province" SortExpression="Cust_Province">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox12" runat="server" Text='<%# Bind("Cust_Province") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditProvince" runat="server" ErrorMessage="Province is a required field" ControlToValidate = "TextBox12" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -179,7 +178,7 @@
                     <asp:RequiredFieldValidator ID="rfvInsertProvince" ValidationGroup="INSERT" runat="server" ErrorMessage="Province is a required field" ControlToValidate = "txtProvince" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_Postal_Code" SortExpression="Cust_Postal_Code">
+            <asp:TemplateField HeaderText="Postal Code" SortExpression="Cust_Postal_Code">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox13" runat="server" Text='<%# Bind("Cust_Postal_Code") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditPostCode" runat="server" ErrorMessage="Postal Code is a required field" ControlToValidate = "TextBox13" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -192,7 +191,8 @@
                     <asp:RequiredFieldValidator ID="rfvInsertPostCode" ValidationGroup="INSERT" runat="server" ErrorMessage="Postal Code is a required field" ControlToValidate = "txtPostalCode" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Cust_Active_Status" SortExpression="Cust_Active_Status">
+            <asp:TemplateField HeaderText="Active Status" 
+                SortExpression="Cust_Active_Status">
                 <EditItemTemplate>
                     <asp:DropDownList ID="DropDownList1" runat="server" SelectedValue='<%# Bind("Cust_Active_Status") %>'>
                         <asp:ListItem>Select Active Status</asp:ListItem>
@@ -225,8 +225,13 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-    <asp:ValidationSummary ValidationGroup="INSERT" ID="ValidationSummary1" ForeColor="Red" runat="server" />
-    <asp:ValidationSummary ID="ValidationSummary2" runat="server" />
+   </div>
+
+    
+    <asp:ValidationSummary ValidationGroup="INSERT" ID="ValidationSummary1" 
+        ForeColor="Red" runat="server" ShowMessageBox="True" />
+    <asp:ValidationSummary ID="ValidationSummary2" runat="server" 
+        ShowMessageBox="True" />
     <asp:SqlDataSource ID="SQLCustomerManager" runat="server" ConnectionString="<%$ ConnectionStrings:group16ConnectionString %>"
         SelectCommand="SELECT * FROM [Customer]" ConflictDetection="CompareAllValues"
         DeleteCommand="DELETE FROM [Customer] WHERE [Customer_ID] = @original_Customer_ID AND [Cust_FName] = @original_Cust_FName AND [Cust_SName] = @original_Cust_SName AND [Cust_DOB] = @original_Cust_DOB AND [Cust_Phone_No] = @original_Cust_Phone_No AND (([Cust_Alt_Phone_No] = @original_Cust_Alt_Phone_No) OR ([Cust_Alt_Phone_No] IS NULL AND @original_Cust_Alt_Phone_No IS NULL)) AND [Cust_Email] = @original_Cust_Email AND (([Cust_Password] = @original_Cust_Password) OR ([Cust_Password] IS NULL AND @original_Cust_Password IS NULL)) AND [Cust_Street_Addr_1] = @original_Cust_Street_Addr_1 AND (([Cust_Street_Addr_2] = @original_Cust_Street_Addr_2) OR ([Cust_Street_Addr_2] IS NULL AND @original_Cust_Street_Addr_2 IS NULL)) AND [Cust_Suburb] = @original_Cust_Suburb AND [Cust_City] = @original_Cust_City AND [Cust_Province] = @original_Cust_Province AND [Cust_Postal_Code] = @original_Cust_Postal_Code AND [Cust_Active_Status] = @original_Cust_Active_Status"
