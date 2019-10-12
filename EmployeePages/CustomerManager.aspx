@@ -12,8 +12,7 @@
     <br />
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True"
         AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Customer_ID" DataSourceID="SQLCustomerManager"
-        ForeColor="#333333" GridLines="None" Width="1173px" ShowFooter="True" 
-        onselectedindexchanged="GridView1_SelectedIndexChanged">
+        ForeColor="#333333" GridLines="None" Width="1173px" ShowFooter="True">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
@@ -25,7 +24,7 @@
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("Customer_ID") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:LinkButton ValidationGroup="INSERT" OnClick="lbInsert_Click" ID="lbInsert"  runat="server" Text="Insert">Insert</asp:LinkButton>
+                    <asp:LinkButton ValidationGroup="INSERT" ID="lbInsert"  runat="server" Text="Insert">Insert</asp:LinkButton>
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Cust_FName" SortExpression="Cust_FName">
@@ -56,13 +55,15 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Cust_DOB" SortExpression="Cust_DOB">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox3" runat="server"  Text='<%# Bind("Cust_DOB") %>' TextMode="DateTime"></asp:TextBox>
+                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Cust_DOB") %>'></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvEditDOB" runat="server" ErrorMessage="DOB is a required field" ControlToValidate = "TextBox3" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label4" runat="server" Text='<%# Bind("Cust_DOB") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="txtDOB" runat="server" TextMode="Date"></asp:TextBox>
+                    <asp:TextBox ID="txtDOB" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvInsertDOB" ValidationGroup="INSERT" runat="server" ErrorMessage="DOB is a required field" ControlToValidate = "txtDOB" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Cust_Phone_No" SortExpression="Cust_Phone_No">
