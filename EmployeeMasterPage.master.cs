@@ -20,6 +20,18 @@ public partial class EmployeeMasterPage : System.Web.UI.MasterPage
             {
                 ManagerNavigationMenu.Visible = false;
             }
+            if (Session["New"] == null)
+            {
+                
+                btnLogin.Visible = true;
+                btnLogout.Visible = false;
+            }
+            else
+            {
+                
+                btnLogin.Visible = false;
+                btnLogout.Visible = true;
+            }
         }
         catch (Exception exception)
         {
@@ -41,5 +53,17 @@ public partial class EmployeeMasterPage : System.Web.UI.MasterPage
     protected void Image1_Click(object sender, ImageClickEventArgs e)
     {
         Response.Redirect("Default.aspx");
+    }
+    protected void btnLogin_Click(object sender, EventArgs e)
+    {
+        if (Session["New"] == null)
+        {
+            Response.Redirect("~/LoginNew.aspx");
+        }
+    }
+    protected void btnLogout_Click(object sender, EventArgs e)
+    {
+        Session["New"] = null;
+        Response.Redirect("~/Default.aspx");
     }
 }

@@ -118,8 +118,14 @@
                             <StaticSelectedStyle BackColor="#1C5E55" />
                         </asp:Menu>
                     </div>
-                    
-
+                    <div style="float: left">
+                    <asp:Button ID="btnLogin" runat="server" BackColor="#5D7B9D" 
+                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px"  
+                            Width="100px" Text="Login" onclick="btnLogin_Click" />
+                    <asp:Button ID="btnLogout" runat="server" BackColor="#5D7B9D" 
+                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px"  
+                            Width="100px" Text="Logout" onclick="btnLogout_Click" />
+                    </div>
                     <div style="float: left">
                         <asp:Menu ID="EmployeeNavigationMenu" runat="server" CssClass="menu" 
                             EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
@@ -133,6 +139,8 @@
                             <Items>
                                 <asp:MenuItem NavigateUrl="~/EmployeePages/CustomerQuoteManagerPages/CustomerQuoteManager.aspx" 
                                     Text="Customer Quotes" Value="CustomerQuoteManager"/>
+                                <asp:MenuItem NavigateUrl="~/EmployeePages/CustomerQuoteManagerPages/CreateOrEditCustomerQuote.aspx" 
+                                    Text="Add/Edit Quotes" Value="AddorEdit Quotes"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/EmployeePages/SupplierQuoteManager.aspx" 
                                     Text="Supplier Quotes" Value="SupplierQuoteManager"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/EmployeePages/ProductManager.aspx" Text="Products" 
@@ -143,6 +151,7 @@
                                     Text="Customers" Value="CustomerManager"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/EmployeePages/EmployeeAccount.aspx" 
                                     Text="My Account" Value="EmployeeAccount"></asp:MenuItem>   
+                                
                             </Items>
                             <StaticHoverStyle BackColor="#666666" ForeColor="White" />
                             <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />

@@ -153,9 +153,11 @@
                     </div>
                     
                      
-                    <asp:Button ID="btnLogin" runat="server" onclick="btnLogin_Click" 
+                    <asp:Button ID="btnLogin" runat="server" BackColor="#5D7B9D" 
+                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px"  Width="100px" onclick="btnLogin_Click" 
                         Text="Login" />
-                    <asp:Button ID="btnLogout" runat="server" onclick="btnLogout_Click" 
+                    <asp:Button ID="btnLogout" runat="server" BackColor="#5D7B9D" 
+                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px"  Width="100px" onclick="btnLogout_Click" 
                         Text="Logout" />
                     
                      

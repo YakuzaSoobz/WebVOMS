@@ -5,20 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
-using System.Configuration;
 
-
-public partial class LoginNew : System.Web.UI.Page
+public partial class Login : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         LabelError.Visible = false;
     }
-
-    protected void Button1_Click(object sender, EventArgs e)
+    protected void btnLogin_Click(object sender, EventArgs e)
     {
-        
-
         try
         {
             SqlConnection conn = new SqlConnection("Server=146.230.177.46\\ist3;Database=group16;User ID=group16;Password=78fgg");
@@ -46,14 +41,14 @@ public partial class LoginNew : System.Web.UI.Page
                 }
 
             }
-            else if(temp != 1)
+            else if (temp != 1)
             {
                 conn.Open();
                 checkuser = "Select count(*) from Employee where Employee_Email='" + TextBoxUserName.Text + "'";
                 com = new SqlCommand(checkuser, conn);
                 temp = Convert.ToInt32(com.ExecuteScalar().ToString());
                 conn.Close();
-                if(temp==1)
+                if (temp == 1)
                 {
                     conn.Open();
                     string checkPasswordQuery = "SELECT Employee_Password FROM Employee where Employee_Email='" + TextBoxUserName.Text + "'";
@@ -64,7 +59,7 @@ public partial class LoginNew : System.Web.UI.Page
                         string getEmpRole = "SELECT Employee_Position FROM Employee where Employee_Email='" + TextBoxUserName.Text + "'";
                         SqlCommand empCom = new SqlCommand(getEmpRole, conn);
                         string empRole = empCom.ExecuteScalar().ToString().Trim();
-                        if(empRole.Equals("Manager"))
+                        if (empRole.Equals("Manager"))
                         {
                             Session["New"] = TextBoxUserName.Text;
                             Session["Role"] = "Manager";
@@ -77,7 +72,7 @@ public partial class LoginNew : System.Web.UI.Page
                             Response.Redirect("~/EmployeePages/CustomerManager.aspx");
                         }
 
-                        
+
 
                     }
                     else
