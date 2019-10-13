@@ -15,13 +15,13 @@ public partial class SiteMaster : System.Web.UI.MasterPage
             PageMenu.Initialise(Page);
             if (Session["New"] == null)
             {
-                lblLoggedIn.Text = "";
+                //lblLoggedIn.Text = "";
                 btnLogin.Visible = true;
                 btnLogout.Visible = false;
             }
             else
             {
-                lblLoggedIn.Text = Session["New"].ToString();
+                //lblLoggedIn.Text = Session["New"].ToString();
                 btnLogin.Visible = false;
                 btnLogout.Visible = true;
             }

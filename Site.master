@@ -123,7 +123,6 @@
                         <asp:Button ID="btnLogout" runat="server" BackColor="#5D7B9D" 
                         BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px"  Width="100px" Text="Logout" 
                             onclick="btnLogout_Click" />
-                        <asp:Label ID="lblLoggedIn" runat="server" Text="Label"></asp:Label>
                     </div>
                     
                      
