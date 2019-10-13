@@ -77,6 +77,8 @@
                                     <asp:Label ID="Label1" runat="server" Text="Not Registered Yet?"></asp:Label>
                                     <asp:HyperLink ID="HyperLink1" runat="server" Text=" Click Here" 
                                         NavigateUrl="~/Registration.aspx"></asp:HyperLink>
+                                    <asp:Label ID="lblPrefix" runat="server" Text=""></asp:Label>
+                                    <asp:Label ID="lblUser" runat="server" Text=""></asp:Label>
                                 </div>
                             </td>
                         </tr>
@@ -107,8 +109,79 @@
                             <StaticSelectedStyle BackColor="#1C5E55" />
                         </asp:Menu>
                     </div>
-                    
-
+                    <div style="float: left">
+                        <asp:Menu ID="CustomerNavigationMenu" runat="server" CssClass="menu" 
+                            EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
+                            ForeColor="#666666" BackColor="#E3EAEB" BorderStyle="None" 
+                            DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
+                            StaticSubMenuIndent="10px" Visible="False">
+                            <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle BackColor="#E3EAEB" />
+                            <DynamicSelectedStyle BackColor="#1C5E55" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/CustomerPages/CustomerQuoteHistory.aspx" 
+                                    Text="My Quotes" Value="CustomerQuoteHistory"/>
+                                <asp:MenuItem NavigateUrl="~/CustomerPages/CustomerAccount.aspx" Text="My Account" 
+                                    Value="CustomerAccount"/>
+                            </Items>
+                            <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle BackColor="#1C5E55" />
+                        </asp:Menu>
+                        
+                    </div>
+                    <div style="float: left">
+                        <asp:Menu ID="EmployeeNavigationMenu" runat="server" CssClass="menu" 
+                            EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
+                            ForeColor="#666666" BackColor="#E3EAEB" BorderStyle="None" 
+                            DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
+                            StaticSubMenuIndent="10px" Visible="False">
+                            <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle BackColor="#E3EAEB" />
+                            <DynamicSelectedStyle BackColor="#1C5E55" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/EmployeePages/CustomerQuoteManagerPages/CustomerQuoteManager.aspx" 
+                                    Text="Customer Quotes" Value="CustomerQuoteManager"/>
+                                <asp:MenuItem NavigateUrl="~/EmployeePages/SupplierQuoteManager.aspx" 
+                                    Text="Supplier Quotes" Value="SupplierQuoteManager"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/EmployeePages/ProductManager.aspx" Text="Products" 
+                                    Value="ProductManager"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/EmployeePages/SupplierManager.aspx" 
+                                    Text="Suppliers" Value="SupplierManager"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/EmployeePages/CustomerManager.aspx" 
+                                    Text="Customers" Value="CustomerManager"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/EmployeePages/EmployeeAccount.aspx" 
+                                    Text="My Account" Value="EmployeeAccount"></asp:MenuItem>   
+                                
+                            </Items>
+                            <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle BackColor="#1C5E55" />
+                        </asp:Menu>
+                    </div>
+                    <div style="float: left">
+                        <asp:Menu ID="ManagerNavigationMenu" runat="server" CssClass="menu" 
+                            EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal" 
+                            ForeColor="#666666" BackColor="#E3EAEB" BorderStyle="None" 
+                            DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
+                            StaticSubMenuIndent="10px" Visible="False">
+                            <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle BackColor="#E3EAEB" />
+                            <DynamicSelectedStyle BackColor="#1C5E55" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/ManagerPages/EmployeeManager.aspx" 
+                                    Text="Employees" Value="EmployeeManager"/>
+                                <asp:MenuItem NavigateUrl="~/ManagerPages/ReportManager.aspx" Text="Reports" 
+                                    Value="ReportManager"/>
+                            </Items>
+                            <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle BackColor="#1C5E55" />
+                        </asp:Menu>
+                    </div>
                     <div style="float: left">
                     </div>
 
@@ -121,8 +194,12 @@
                             onclick="btnLogin_Click2" />
                         
                         <asp:Button ID="btnLogout" runat="server" BackColor="#5D7B9D" 
-                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px"  Width="100px" Text="Logout" 
-                            onclick="btnLogout_Click" />
+
+                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px"  
+                            Width="100px" Text="Logout" 
+                            onclick="btnLogout_Click" Visible="False" />
+                        <asp:Label ID="lblLoggedIn" runat="server" Text="Label" Visible="False"></asp:Label>
+
                     </div>
                     
                      

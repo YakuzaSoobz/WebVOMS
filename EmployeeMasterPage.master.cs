@@ -13,6 +13,7 @@ public partial class EmployeeMasterPage : System.Web.UI.MasterPage
        
             try
             {
+
                 PageMenu.Initialise(Page);
                 if (Session["Role"].ToString().Equals("Manager"))
                 {
@@ -24,25 +25,29 @@ public partial class EmployeeMasterPage : System.Web.UI.MasterPage
                     ManagerNavigationMenu.Visible = false;
                 }
 
-                if (Session["New"] == null)
+                if ((Session["New"] == null) || Session["New"].Equals(""))
                 {
-
+                    lblPrefix.Text = "";
+                    lblUser.Text = "";
                     btnLogin.Visible = true;
                     btnLogout.Visible = false;
                 }
                 else
                 {
 
-                    btnLogin.Visible = false;
-                    btnLogout.Visible = true;
-                }
-            }
-            catch (Exception )
-            {
-                    Response.Write("<script> alert('Oops page failed to load properly!')</script>");
-            }
 
-    }
+                lblPrefix.Text = "User Logged In is : ";
+                lblUser.Text = Session["New"].ToString();
+                btnLogin.Visible = false;
+                btnLogout.Visible = true;
+                }
+           
+        }
+        catch (Exception exception)
+        {
+            Response.Write("<script> alert('Oops page failed to load properly!')</script>");
+        }
+      }
 
     protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
     {
@@ -58,7 +63,7 @@ public partial class EmployeeMasterPage : System.Web.UI.MasterPage
     }
     protected void Image1_Click(object sender, ImageClickEventArgs e)
     {
-        Response.Redirect("Default.aspx");
+        Response.Redirect("~/Default.aspx");
     }
     protected void btnLogin_Click(object sender, EventArgs e)
     {

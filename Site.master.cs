@@ -13,22 +13,45 @@ public partial class SiteMaster : System.Web.UI.MasterPage
         try
         {
             PageMenu.Initialise(Page);
-            if (Session["New"] == null)
+
+            if (Session["New"].Equals("") || Session["New"] == null)
             {
-                //lblLoggedIn.Text = "";
+
+                lblPrefix.Text = "";
+                lblUser.Text = "";
                 btnLogin.Visible = true;
                 btnLogout.Visible = false;
+                lblLoggedIn.Text = "";
             }
             else
             {
-                //lblLoggedIn.Text = Session["New"].ToString();
+                Label1.Visible = false;
+                HyperLink1.Visible = false;
+                lblPrefix.Text = "User Logged In is : ";
+                lblUser.Text = Session["New"].ToString();
+                lblLoggedIn.Text = Session["New"].ToString();
                 btnLogin.Visible = false;
                 btnLogout.Visible = true;
+
+            }
+
+
+            if(Session["Role"].ToString().Equals("Customer")){
+                CustomerNavigationMenu.Visible = true;
+            }
+            else if(Session["Role"].ToString().Equals("Employee"))
+            {
+                EmployeeNavigationMenu.Visible = true;
+            }
+            else if(Session["Role"].ToString().Equals("Manager"))
+            {
+                EmployeeNavigationMenu.Visible = true;
+                ManagerNavigationMenu.Visible = true;
             }
         }
         catch (Exception exception)
         {
-            Response.Write("<script> alert('Oops page failed to load properly!')</script>");
+            //Response.Write("<script> alert('Oops page failed to load properly!')</script>");
         }
        
 
@@ -49,33 +72,36 @@ public partial class SiteMaster : System.Web.UI.MasterPage
     }
     protected void Image1_Click(object sender, ImageClickEventArgs e)
     {
-        Response.Redirect("Default.aspx");
+        Response.Redirect("~/Default.aspx");
     }
     protected void btnLogin_Click(object sender, EventArgs e)
     {
-        if (Session["New"] == null)
+        if (Session["New"].Equals(""))
         {
             Response.Redirect("~/LoginNew.aspx");
         }
     }
     protected void btnLogin_Click1(object sender, EventArgs e)
     {
-        if (Session["New"] == null)
+        if (Session["New"].Equals(""))
         {
             Response.Redirect("~/LoginNew.aspx");
         }
     }
     protected void btnLogout_Click(object sender, EventArgs e)
     {
-        Session["New"] = null;
+        Session["New"] = "";
+        Session["Role"] = "";
+        Label1.Visible = true;
+        HyperLink1.Visible = true;
         Response.Redirect("~/Default.aspx");
     }
     protected void btnLogin_Click2(object sender, EventArgs e)
     {
-        if (Session["New"] == null)
-        {
+       
             Response.Redirect("~/LoginNew.aspx");
-        }
+        
+
     }
     protected void HeadLoginStatus_LoggingOut(object sender, LoginCancelEventArgs e)
     {
