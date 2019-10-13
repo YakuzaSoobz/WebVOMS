@@ -66,7 +66,7 @@
                 <br />
                 Message<label>:<br />
                 </label>
-                <asp:TextBox ID="BodyTextBox" runat="server" Height="87px" Width="100%" 
+                <asp:TextBox ID="BodyTextBox" runat="server" style="resize:none;" Height="87px" Width="100%" 
                     TextMode="MultiLine"></asp:TextBox>
                 <br />
                 Enter your Email:<br />
@@ -92,7 +92,6 @@
                 </div>
                
         </form>
-
     </div>
 
     <br />
