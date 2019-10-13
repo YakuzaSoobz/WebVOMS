@@ -78,12 +78,11 @@ public partial class Registration : System.Web.UI.Page
                 SQLDSAddCust.InsertParameters["Cust_Province"].DefaultValue = txtProvince.Text;
                 SQLDSAddCust.InsertParameters["Cust_Postal_Code"].DefaultValue = txtPostCode.Text;
                 SQLDSAddCust.InsertParameters["Cust_Active_Status"].DefaultValue = DropDownList1.SelectedValue.ToString();
-                //@, @, @, 
-                //@, @, @, 
-                //@, @, @, 
-                //@, @, @, 
-                //@, @ 
+
                 SQLDSAddCust.Insert();
+                Session["New"] = txtEmail.Text;
+                Session["Role"] = "Customer";
+                Response.Redirect("~/CustomerPages/CustomerAccount.aspx");
             }
             else
             {

@@ -47,7 +47,7 @@ public partial class CustomerMasterPage : System.Web.UI.MasterPage
     }
     protected void Image1_Click(object sender, ImageClickEventArgs e)
     {
-        Response.Redirect("Default.aspx");
+        Response.Redirect("~/Default.aspx");
     }
     protected void btnLogin_Click(object sender, EventArgs e)
     {

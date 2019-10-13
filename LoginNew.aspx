@@ -32,8 +32,10 @@
 
             </td>
             <td>
-
-                <asp:TextBox ID="TextBoxPassword" runat="server"></asp:TextBox>
+                
+                <asp:TextBox ID="TextBoxPassword" TextMode="Password" runat="server"></asp:TextBox>
+                <asp:ImageButton ID="ImageButton4" runat="server" Height="16px" 
+                    ImageUrl="~/Pictures/eye.png" onclick="ImageButton4_Click" />
             </td>
             <td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 

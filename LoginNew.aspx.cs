@@ -28,9 +28,10 @@ public partial class Login : System.Web.UI.Page
                 string checkPasswordQuery = "SELECT Cust_Password FROM Customer where Cust_Email='" + TextBoxUserName.Text + "'";
                 SqlCommand passComm = new SqlCommand(checkPasswordQuery, conn);
                 string password = passComm.ExecuteScalar().ToString().Trim();
-                if (password == TextBoxPassword.Text.Trim())
+                if (password.Equals(TextBoxPassword.Text))
                 {
                     Session["New"] = TextBoxUserName.Text;
+                    Session["Role"] = "Customer";
                     Response.Redirect("~/CustomerPages/CustomerAccount.aspx");
 
                 }
@@ -97,5 +98,22 @@ public partial class Login : System.Web.UI.Page
             LabelError.Visible = true;
             LabelError.Text = "Oops, an error was encountered while loading this page :( Our team is looking at the issue! Please retry later!";
         }
+    }
+    protected void ImageButton4_Click(object sender, ImageClickEventArgs e)
+    {
+        if (TextBoxPassword.TextMode.CompareTo(TextBoxMode.Password) != 0)
+        {
+            String temp = TextBoxPassword.Text;
+            TextBoxPassword.TextMode = TextBoxMode.SingleLine;
+            TextBoxPassword.Text = temp;
+        }
+        else
+        {
+            String temp = TextBoxPassword.Text;
+            TextBoxPassword.TextMode = TextBoxMode.Password;
+            TextBoxPassword.Text = temp;
+        }
+
+        
     }
 }
