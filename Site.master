@@ -74,20 +74,9 @@
                             </td>
                             <td style="width: 200px; height: 100px; text-align: center;">
                                 <div class="loginDisplay">
-                                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false" 
-                                        Visible="False">
-                                        <AnonymousTemplate>
-                                             <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server" style="font-size: x-large">SIGN IN</a> 
-                                        </AnonymousTemplate>
-                                        <LoggedInTemplate>
-                                        
-                                            Signed in as: <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                                            <br />
-                                             <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" 
-                                                LogoutText="Log Out" LogoutPageUrl="~/" 
-                                                onloggingout="HeadLoginStatus_LoggingOut"/> 
-                                        </LoggedInTemplate>
-                                    </asp:LoginView>
+                                    <asp:Label ID="Label1" runat="server" Text="Not Registered Yet?"></asp:Label>
+                                    <asp:HyperLink ID="HyperLink1" runat="server" Text=" Click Here" 
+                                        NavigateUrl="~/Registration.aspx"></asp:HyperLink>
                                 </div>
                             </td>
                         </tr>
@@ -126,11 +115,13 @@
                     <div style="float: left">
                     </div>
 
-                    <div style="float: left">
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" 
+                    <div style="float: right">
+                        <asp:Button ID="btnLogin" runat="server" BackColor="#5D7B9D" 
+                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px"  Width="100px" Text="Login" 
                             onclick="btnLogin_Click2" />
                         
-                        <asp:Button ID="btnLogout" runat="server" Text="Logout" 
+                        <asp:Button ID="btnLogout" runat="server" BackColor="#5D7B9D" 
+                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px"  Width="100px" Text="Logout" 
                             onclick="btnLogout_Click" />
                         <asp:Label ID="lblLoggedIn" runat="server" Text="Label"></asp:Label>
                     </div>

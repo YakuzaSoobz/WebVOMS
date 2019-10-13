@@ -1,85 +1,63 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LoginNew.aspx.cs" Inherits="LoginNew" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="LoginNew.aspx.cs" Inherits="Login" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <style type="text/css">
-        .style1
+        .style18
         {
-            font-size: x-large;
-            text-align: center;
-        }
-        .style2
-        {
-            width: 100%;
-        }
-        .style3
-        {
-            width: 187px;
-        }
-        .style4
-        {
-            width: 187px;
-            text-align: right;
+            width: 50%;
         }
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div class="style1">
-    
-        <strong>Login Page</strong></div>
-    <table class="style2">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+<br />
+
+    <div >
+         <table class="style18" style="margin:0 auto">
         <tr>
-            <td class="style4">
-                UserName</td>
             <td>
-                &nbsp;</td>
+                <asp:Label ID="Label1" runat="server" Text="Username : "></asp:Label>
+                </td>
             <td>
-                <asp:TextBox ID="TextBoxUserName" runat="server" Width="180px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                <asp:TextBox ID="TextBoxUserName" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                  <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                     ControlToValidate="TextBoxUserName" ErrorMessage="Please enter UserName" 
                     ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td class="style4">
-                Password</td>
             <td>
-                &nbsp;</td>
+                <asp:Label ID="Label2" runat="server" Text="Password : "></asp:Label>
+
+            </td>
             <td>
-                <asp:TextBox ID="TextBoxPassword" runat="server" TextMode="Password" 
-                    Width="180px"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+
+                <asp:TextBox ID="TextBoxPassword" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                     ControlToValidate="TextBoxPassword" ErrorMessage="Please enter Password" 
                     ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td class="style3">
-                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style3">
-                &nbsp;</td>
+                <asp:Button ID="btnLogin" runat="server" Text="Login" onclick="btnLogin_Click" 
+                    BackColor="#5F87A5" BorderColor="Black" ForeColor="White" Height="30px" 
+                    Width="100px" />
+            </td>
             <td>
-                &nbsp;</td>
-            <td>
-                <asp:Button ID="Button_Login" runat="server" onclick="Button1_Click" 
-                    Text="Login" />
+                <asp:Label ID="LabelError" runat="server" Text=""></asp:Label>
+
             </td>
         </tr>
     </table>
-    <p>
-        &nbsp;</p>
+    </div>
+   
+    <br />
 
-    <asp:Label ID="LabelError" runat="server" Text="" ForeColor="Red"></asp:Label>
-    </form>
-</body>
-</html>
+</asp:Content>
+
