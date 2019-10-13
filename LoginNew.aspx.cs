@@ -37,7 +37,8 @@ public partial class Login : System.Web.UI.Page
                 }
                 else
                 {
-
+                    string script = "alert(\"Password is not correct!\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
                     Response.Write("Password is not correct");
                 }
 
