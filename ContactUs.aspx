@@ -49,15 +49,15 @@
     <div class = "Quote" 
         
         style="padding: 0px; text-align: left; width: 302px; margin: 0 auto; height: 360px; background-color: #598DB6; color: #FFFFFF;">
-        <h3 style="font-size: medium; font-weight: bold; color: #FFFFFF; text-decoration: underline;">
+        <h3 style="font-size: medium; font-weight: bold; color: #FFFFFF; text-decoration: underline; text-align: center;">
             Email Us:
         </h3>
 
         <form  class = "RequestQuote">
             <div style="height: 334px; width: 297px">
                 <br />
-                <asp:Label ID="Label1" runat="server" Text="Subject"></asp:Label>
-                :<br />
+                <asp:Label ID="Label1" runat="server" Text="Subject:"></asp:Label>
+                <br />
                 <asp:DropDownList ID="DropDownListSubject" Width="100%" runat="server">
                     <asp:ListItem>Request Quote</asp:ListItem>
                     <asp:ListItem>Query</asp:ListItem>
@@ -77,11 +77,11 @@
                 <asp:TextBox ID="GmailPassText"  runat="server" Width="100%" 
                     TextMode="Password"></asp:TextBox>
                 <br />
-               
+               <br />
                    
                 <div style="text-align: center" >
                     <asp:Button ID="SendEmailButton" runat="server" onclick="SendEmailButton_Click" 
-                    Text="Send" Width="108px" BackColor="White" BorderColor="Black" 
+                    Text="SEND EMAIL" Width="108px" BackColor="#66CCFF" BorderColor="Black" 
                     BorderStyle="Solid" Height="40px" />
                     <br />
                     <asp:Label ID="lbl_status" runat="server" Font-Size="Small" ForeColor="Red"></asp:Label>

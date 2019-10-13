@@ -12,6 +12,7 @@ public partial class EmployeePages_CustomerManager : System.Web.UI.Page
     {
         PageMenu.Initialise(Page);
         
+        
 
 
     }
@@ -72,6 +73,24 @@ public partial class EmployeePages_CustomerManager : System.Web.UI.Page
 
             string script = "alert(\"Oops, an error occured while trying to connect to the database!\");";
             ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+        }
+    }
+    protected void ButtonRefresh_Click(object sender, EventArgs e)
+    {
+        try
+        {
+
+
+            SQLCustomerManager.FilterExpression = "Cust_City like '%'";
+
+        }
+        catch (SqlException sqlEx)
+        {
+
+            string script = "alert(\"Oops an error occured while trying to connect to the database!\");";
+            ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+
+            TextBoxSearch.Text = "";
         }
     }
 }

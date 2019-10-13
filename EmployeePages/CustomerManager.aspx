@@ -36,7 +36,7 @@
                         
                     <asp:Button ID="ButtonRefresh" runat="server" BackColor="#5D7B9D" 
                         BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px" 
-                        Text="Refresh" Width="70px"   />
+                        Text="Refresh" Width="70px" onclick="ButtonRefresh_Click"   />
                         
                 </td>
               
@@ -157,7 +157,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Password" SortExpression="Cust_Password">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox7" TextMode="Password"  runat="server" Text='<%# Bind("Cust_Password") %>' Enabled="False"></asp:TextBox>
+                    <asp:TextBox ID="TextBox7" TextMode="Password"  runat="server" Text='<%# Bind("Cust_Password") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditPassword" runat="server" ErrorMessage="Password is a required field"  ControlToValidate = "TextBox7" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
