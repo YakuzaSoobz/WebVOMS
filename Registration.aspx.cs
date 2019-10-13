@@ -9,7 +9,7 @@ public partial class Registration : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        
     }
     protected void btnRegister_Click(object sender, EventArgs e)
     {
@@ -80,9 +80,23 @@ public partial class Registration : System.Web.UI.Page
                 SQLDSAddCust.InsertParameters["Cust_Active_Status"].DefaultValue = DropDownList1.SelectedValue.ToString();
 
                 SQLDSAddCust.Insert();
+                int z = 0;
+                if (Session["Contact"].ToString().Equals("T"))
+                {
+                    z++;
+                }
                 Session["New"] = txtEmail.Text;
                 Session["Role"] = "Customer";
-                Response.Redirect("~/CustomerPages/CustomerAccount.aspx");
+                Session["Contact"] = "";
+                if(z == 0)
+                {
+                    Response.Redirect("~/CustomerPages/CustomerAccount.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/ContactUs.aspx");
+                }
+                
             }
             else
             {

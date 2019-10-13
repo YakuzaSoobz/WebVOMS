@@ -75,7 +75,7 @@
                 </ItemTemplate>
 
                 <FooterTemplate>
-                    <asp:LinkButton ValidationGroup="INSERT"  OnClientClick="return confirm('Are you sure you want to add a new Customer to the Database?');"  ID="lbInsert"  runat="server" Text="Insert">Insert</asp:LinkButton>
+                    <asp:LinkButton ValidationGroup="INSERT" OnClick="lbInsert_Click" OnClientClick="return confirm('Are you sure you want to add a new Customer to the Database?');"  ID="lbInsert"  runat="server" Text="Insert">Insert</asp:LinkButton>
                 </FooterTemplate>
 
             </asp:TemplateField>
@@ -120,26 +120,26 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Phone No" SortExpression="Cust_Phone_No">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Cust_Phone_No") %>'></asp:TextBox>
+                    <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Cust_Phone_No") %>' MaxLength="12"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditPhoneNo" runat="server" ErrorMessage="Phone No. is a required field" ControlToValidate = "TextBox4" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label5" runat="server" Text='<%# Bind("Cust_Phone_No") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="txtCustPhone" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtCustPhone" runat="server" MaxLength="12"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvInsertPhoneNo" ValidationGroup="INSERT" runat="server" ErrorMessage="Phone No. is a required field" ControlToValidate = "txtCustPhone" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Alt Phone No" SortExpression="Cust_Alt_Phone_No">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("Cust_Alt_Phone_No") %>'></asp:TextBox>
+                    <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("Cust_Alt_Phone_No") %>' MaxLength="12"></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label6" runat="server" Text='<%# Bind("Cust_Alt_Phone_No") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="txtCustAltPhone" runat="server"> </asp:TextBox>
+                    <asp:TextBox ID="txtCustAltPhone" runat="server" MaxLength="12"> </asp:TextBox>
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Email" SortExpression="Cust_Email">
@@ -157,14 +157,14 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Password" SortExpression="Cust_Password">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox7" TextMode="Password"  runat="server" Text='<%# Bind("Cust_Password") %>' Enabled="False"></asp:TextBox>
+                    <asp:TextBox ID="TextBox7" TextMode="Password"  runat="server" Text='<%# Bind("Cust_Password") %>' Enabled="False" MaxLength="10"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditPassword" runat="server" ErrorMessage="Password is a required field"  ControlToValidate = "TextBox7" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label8" runat="server"  Text='<%# Bind("Cust_Password") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="txtPassword"   runat="server"  TextMode="Password"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword"   runat="server"  TextMode="Password" MaxLength="10"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvInsertPassword" ValidationGroup="INSERT" runat="server"  ErrorMessage="Password is a required field" ControlToValidate = "txtPassword" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
@@ -234,14 +234,14 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Postal Code" SortExpression="Cust_Postal_Code">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox13" runat="server" Text='<%# Bind("Cust_Postal_Code") %>'></asp:TextBox>
+                    <asp:TextBox ID="TextBox13" runat="server" Text='<%# Bind("Cust_Postal_Code") %>' MaxLength="4"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditPostCode" runat="server" ErrorMessage="Postal Code is a required field" ControlToValidate = "TextBox13" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label14" runat="server" Text='<%# Bind("Cust_Postal_Code") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="txtPostalCode" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtPostalCode" runat="server" MaxLength="4"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvInsertPostCode" ValidationGroup="INSERT" runat="server" ErrorMessage="Postal Code is a required field" ControlToValidate = "txtPostalCode" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
