@@ -4,40 +4,46 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 public partial class EmployeeMasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        try
-        {
-            PageMenu.Initialise(Page);
-            if (Session["Role"].ToString().Equals("Manager"))
+       
+            try
             {
-                
+                PageMenu.Initialise(Page);
+                if (Session["Role"].ToString().Equals("Manager"))
+                {
+                    
+                }
+                else
+                {
+
+                    ManagerNavigationMenu.Visible = false;
+                }
+
+                if (Session["New"] == null)
+                {
+
+                    btnLogin.Visible = true;
+                    btnLogout.Visible = false;
+                }
+                else
+                {
+
+                    btnLogin.Visible = false;
+                    btnLogout.Visible = true;
+                }
             }
-            else 
+            catch (Exception )
             {
-                ManagerNavigationMenu.Visible = false;
+                    Response.Write("<script> alert('Oops page failed to load properly!')</script>");
             }
-            if (Session["New"] == null)
-            {
-                
-                btnLogin.Visible = true;
-                btnLogout.Visible = false;
-            }
-            else
-            {
-                
-                btnLogin.Visible = false;
-                btnLogout.Visible = true;
-            }
-        }
-        catch (Exception exception)
-        {
-            Response.Write("<script> alert('Oops page failed to load properly!')</script>");
-        }
+
     }
+
     protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
     {
         Response.Redirect("https://www.facebook.com/");

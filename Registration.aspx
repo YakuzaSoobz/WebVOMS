@@ -4,127 +4,127 @@
     <style type="text/css"> 
         .style18 
         { 
-            width: 100%; 
+            width: 60%; 
         } 
         .style19 
-        { 
-            width: 328px; 
+        {
         } 
+        .style20
+        {
+            width: 199px;
+            float: left;
+        }
     </style> 
 </asp:Content> 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server"> 
 <br /> 
+    <h2 style="font-size: x-large; text-decoration: underline;">
+        Customer registration:
+    </h2>
 <br /> 
-<br /> 
-    <table class="style18"> 
+
+    <div style="border-color: #000000; border-style: solid; width: 100%; text-align: center">
+        
+        <h2 style="font-size: medium; ">
+            Please fill in all the required fields in order to register with us!
+        </h2>
+
+        <table class="style18" align="center"> 
         <tr> 
-            <td class="style19"> 
-                <asp:Label ID="Label2" runat="server" Text="First Name"></asp:Label> 
-            </td> 
+            <td class="style20"> 
+                &nbsp;<asp:Label ID="Label2" runat="server" Text="* First Name"></asp:Label> 
+                :</td> 
             <td> 
                 <asp:TextBox ID="txtFName" runat="server"></asp:TextBox> 
             </td> 
             <td> 
-                &nbsp;</td> 
-            <td> 
-                <asp:Label ID="Label10" runat="server" Text="Street Address 1"></asp:Label> 
-            </td> 
+                <asp:Label ID="Label10" runat="server" Text="* Street Address 1"></asp:Label> 
+                :</td> 
             <td> 
                 <asp:TextBox ID="txtStrAddress" runat="server"></asp:TextBox> 
             </td> 
         </tr> 
         <tr> 
-            <td class="style19"> 
-                <asp:Label ID="Label3" runat="server" Text="Surname"></asp:Label> 
-            </td> 
+            <td class="style20"> 
+                <asp:Label ID="Label3" runat="server" Text="* Surname"></asp:Label> 
+                :</td> 
             <td> 
                 <asp:TextBox ID="txtSurname" runat="server"></asp:TextBox> 
             </td> 
             <td> 
-                &nbsp;</td> 
-            <td> 
                 <asp:Label ID="Label11" runat="server" Text="Street Address 2"></asp:Label> 
-            </td> 
+                :</td> 
             <td> 
                 <asp:TextBox ID="txtStrAddress2" runat="server"></asp:TextBox> 
             </td> 
         </tr> 
         <tr> 
-            <td class="style19"> 
-                <asp:Label ID="Label4" runat="server" Text="Date of Birth"></asp:Label> 
-            </td> 
+            <td class="style20"> 
+                <asp:Label ID="Label4" runat="server" Text="* Date of Birth"></asp:Label> 
+                :</td> 
             <td> 
                 <asp:TextBox ID="txtDOB" runat="server" TextMode="Date"></asp:TextBox> 
             </td> 
             <td> 
-                &nbsp;</td> 
-            <td> 
-                <asp:Label ID="Label12" runat="server" Text="Suburb"></asp:Label> 
-            </td> 
+                <asp:Label ID="Label12" runat="server" Text="* Suburb"></asp:Label> 
+                :</td> 
             <td> 
                 <asp:TextBox ID="txtSuburb" runat="server"></asp:TextBox> 
             </td> 
         </tr> 
         <tr> 
-            <td class="style19"> 
-                <asp:Label ID="Label5" runat="server" Text="Contact Number"></asp:Label> 
+            <td class="style20"> 
+                <asp:Label ID="Label5" runat="server" Text="* Contact Number"></asp:Label> 
+                :</td> 
+            <td> 
+                <asp:TextBox ID="txtPhoneNo" runat="server" TextMode="Phone"></asp:TextBox> 
             </td> 
             <td> 
-                <asp:TextBox ID="txtPhoneNo" runat="server"></asp:TextBox> 
-            </td> 
-            <td> 
-                &nbsp;</td> 
-            <td> 
-                <asp:Label ID="Label13" runat="server" Text="City"></asp:Label> 
-            </td> 
+                <asp:Label ID="Label13" runat="server" Text="* City"></asp:Label> 
+                :</td> 
             <td> 
                 <asp:TextBox ID="txtCity" runat="server"></asp:TextBox> 
             </td> 
         </tr> 
         <tr> 
-            <td class="style19"> 
-                <asp:Label ID="Label6" runat="server" Text="(Alternate) Phone Number"></asp:Label> 
-            </td> 
+            <td class="style20"> 
+                <asp:Label ID="Label6" runat="server" Text="Alternate Contact Number"></asp:Label> 
+                :</td> 
             <td> 
                 <asp:TextBox ID="txtAltPhoneNo" runat="server"></asp:TextBox> 
             </td> 
             <td> 
-                &nbsp;</td> 
-            <td> 
-                <asp:Label ID="Label14" runat="server" Text="Province"></asp:Label> 
-            </td> 
+                <asp:Label ID="Label14" runat="server" Text="* Province"></asp:Label> 
+                :</td> 
             <td> 
                 <asp:TextBox ID="txtProvince" runat="server"></asp:TextBox> 
             </td> 
         </tr> 
         <tr> 
-            <td class="style19"> 
-                <asp:Label ID="Label7" runat="server" Text="Email"></asp:Label> 
+            <td class="style20"> 
+                <asp:Label ID="Label7" runat="server" Text="* Email"></asp:Label> 
+                :</td> 
+            <td> 
+                <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox> 
             </td> 
             <td> 
-                <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox> 
-            </td> 
+                <asp:Label ID="Label15" runat="server" Text="* Postal Code"></asp:Label> 
+                :</td> 
             <td> 
-                &nbsp;</td> 
-            <td> 
-                <asp:Label ID="Label15" runat="server" Text="Postal Code"></asp:Label> 
-            </td> 
-            <td> 
-                <asp:TextBox ID="txtPostCode" runat="server"></asp:TextBox> 
+                <asp:TextBox ID="txtPostCode" runat="server" MaxLength="4" TextMode="Number"></asp:TextBox> 
             </td> 
         </tr> 
         <tr> 
-            <td class="style19"> 
-                <asp:Label ID="Label8" runat="server" Text="Password (Max 10 characters)"></asp:Label> 
+            <td class="style20"> 
+                <asp:Label ID="Label8" runat="server" Text=" * Password (Max 10 characters)"></asp:Label> 
+                :</td> 
+            <td> 
+                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" MaxLength="10"></asp:TextBox> 
+                <asp:ImageButton ID="ImageButtonSeePassword" runat="server" />
             </td> 
             <td> 
-                <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox> 
-            </td> 
-            <td> 
-                &nbsp;</td> 
-            <td> 
-                <asp:Label ID="Label16" runat="server" Text="Active Status"></asp:Label> 
-            </td> 
+                <asp:Label ID="Label16" runat="server" Text="* Active Status"></asp:Label> 
+                :</td> 
             <td> 
                 <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True"> 
                     <asp:ListItem>T</asp:ListItem> 
@@ -133,20 +133,15 @@
             </td> 
         </tr> 
         <tr> 
-            <td class="style19"> 
-                &nbsp;</td> 
-            <td> 
-                &nbsp;</td> 
-            <td> 
+            <td class="style19" colspan="4"> 
                 <asp:Button ID="btnRegister" runat="server" onclick="btnRegister_Click"  
-                    Text="Click to Register" /> 
+                    Text="Click to Register" BackColor="#598DB6" BorderColor="Black" 
+                    BorderStyle="Solid" ForeColor="White" Height="40px" /> 
             </td> 
-            <td> 
-                &nbsp;</td> 
-            <td> 
-                &nbsp;</td> 
         </tr> 
     </table> 
+    </div>
+    
 <br /> 
     <asp:SqlDataSource ID="SQLDSAddCust" runat="server"  
         ConflictDetection="CompareAllValues"  

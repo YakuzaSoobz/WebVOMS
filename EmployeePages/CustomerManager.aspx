@@ -2,17 +2,69 @@
     CodeFile="CustomerManager.aspx.cs" Inherits="EmployeePages_CustomerManager" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
+     <style type="text/css">
+        .style18
+        {
+            width: 100%;
+            border-style: solid;
+            border-width: 1px;
+            background-color: #DDE4EC;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
+
     <br />
-   
+    <h2 style="font-size: x-large; text-decoration: underline;">
+           Customer Manager:
+    </h2>
+    <br />
+    <br />
+    <table class="style18">
+            <tr>
+                <td width="80%" height="30px" >
+                    <asp:DropDownList ID="DropDownListSearch" runat="server" AutoPostBack="True">
+                        <asp:ListItem>Customer Name</asp:ListItem>
+                        <asp:ListItem>City</asp:ListItem>
+                    </asp:DropDownList>
+
+                <asp:TextBox ID="TextBoxSearch" runat="server" Width="200px" Height="30px"></asp:TextBox>
+                    <asp:Button ID="ButtonSearch" runat="server" BackColor="#5D7B9D" 
+                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px" 
+                        Text="Search" Width="70px" onclick="ButtonSearch_Click"
+                         />
+                        
+                    <asp:Button ID="ButtonRefresh" runat="server" BackColor="#5D7B9D" 
+                        BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px" 
+                        Text="Refresh" Width="70px"   />
+                        
+                </td>
+              
+                
+            </tr>
+     </table>
+               
    <div style="overflow: scroll">
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True"
         AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Customer_ID" DataSourceID="SQLCustomerManager"
         ForeColor="#333333" GridLines="None" Width="1173px" ShowFooter="True">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:CommandField ShowEditButton="True" />
+
+            <asp:TemplateField ShowHeader="False">
+                <EditItemTemplate>
+                    <asp:LinkButton OnClientClick="return confirm('Are you sure you want to update the product details');" ID="LinkButton1"  runat="server" CausesValidation="True" 
+                        CommandName="Update" Text="Update"></asp:LinkButton>
+
+                    &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" 
+                        CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
+                        CommandName="Edit" Text="Edit"></asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+
             <asp:TemplateField HeaderText="Customer ID" InsertVisible="False" 
                 SortExpression="Customer_ID">
                 <EditItemTemplate>
@@ -21,9 +73,11 @@
                 <ItemTemplate>
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("Customer_ID") %>'></asp:Label>
                 </ItemTemplate>
+
                 <FooterTemplate>
-                    <asp:LinkButton ValidationGroup="INSERT" ID="lbInsert"  runat="server" Text="Insert">Insert</asp:LinkButton>
+                    <asp:LinkButton ValidationGroup="INSERT"  OnClientClick="return confirm('Are you sure you want to add a new Customer to the Database?');"  ID="lbInsert"  runat="server" Text="Insert">Insert</asp:LinkButton>
                 </FooterTemplate>
+
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Name" SortExpression="Cust_FName">
                 <EditItemTemplate>
@@ -90,28 +144,28 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Email" SortExpression="Cust_Email">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("Cust_Email") %>'></asp:TextBox>
+                    <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("Cust_Email") %>' TextMode="Email"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditEmail" runat="server" ErrorMessage="Email is a required field" ControlToValidate = "TextBox6" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label7" runat="server" Text='<%# Bind("Cust_Email") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvInsertEmail" ValidationGroup="INSERT" runat="server" ErrorMessage="Email is a required field" ControlToValidate = "txtEmail" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Password" SortExpression="Cust_Password">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox7" runat="server" Text='<%# Bind("Cust_Password") %>'></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvEditPassword" runat="server" ErrorMessage="Password is a required field" ControlToValidate = "TextBox7" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="TextBox7" TextMode="Password"  runat="server" Text='<%# Bind("Cust_Password") %>' Enabled="False"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvEditPassword" runat="server" ErrorMessage="Password is a required field"  ControlToValidate = "TextBox7" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="Label8" runat="server" Text='<%# Bind("Cust_Password") %>'></asp:Label>
+                    <asp:Label ID="Label8" runat="server"  Text='<%# Bind("Cust_Password") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfvInsertPassword" ValidationGroup="INSERT" runat="server" ErrorMessage="Password is a required field" ControlToValidate = "txtPassword" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="txtPassword"   runat="server"  TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvInsertPassword" ValidationGroup="INSERT" runat="server"  ErrorMessage="Password is a required field" ControlToValidate = "txtPassword" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Address " SortExpression="Cust_Street_Addr_1">
