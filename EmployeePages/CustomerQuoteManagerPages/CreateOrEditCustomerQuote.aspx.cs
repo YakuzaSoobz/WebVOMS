@@ -11,6 +11,6 @@ public partial class EmployeePages_CustomerQuoteManagerPages_CreateOrEditCustome
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
     }
 }

@@ -15,13 +15,16 @@
         #CustomerMessageTextArea
         {
             width: 294px;
-            height: 46px;
+            height: 72px;
         }
         #CustomerEmailAddress
         {
             width: 294px;
         }
     </style>
+    <script language="javascript" type="text/javascript">
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server" >
 
@@ -43,26 +46,47 @@
         <br />
     </div>
 
-    <div class = "Quote" style="padding: 0px; text-align: left; width: 300px; margin: 0 auto; height: 226px; background-color: #598DB6; color: #FFFFFF;">
+    <div class = "Quote" 
+        
+        style="padding: 0px; text-align: left; width: 302px; margin: 0 auto; height: 360px; background-color: #598DB6; color: #FFFFFF;">
         <h3 style="font-size: medium; font-weight: bold; color: #FFFFFF; text-decoration: underline;">
             Email Us:
         </h3>
 
         <form  class = "RequestQuote">
-            <div>
+            <div style="height: 334px; width: 297px">
                 <br />
-                <label style="background-color: #598DB6">Email:</label><br />
-                
-                <input id="CustomerEmailAddress" type="text" 
-                    style="width: 296px; font-weight: 700;" /><br />
+                <asp:Label ID="Label1" runat="server" Text="Subject"></asp:Label>
+                :<br />
+                <asp:TextBox ID="SubjectText" runat="server" Width="287px"></asp:TextBox>
                 <br />
-                Message<label>:</label><br />
-                <textarea id="CustomerMessageTextArea" rows = "10" cols = "10"></textarea>
-                <br /><br />
+                Message<label>:<br />
+                </label>
+                <asp:TextBox ID="BodyTextBox" runat="server" Height="87px" Width="288px" 
+                    TextMode="MultiLine"></asp:TextBox>
+                <br />
+                <asp:Label ID="Label2" runat="server" Text="Your Gmail Id"></asp:Label>
+                :<br />
+                <asp:TextBox ID="GmailIDText" runat="server" Width="288px"></asp:TextBox>
+                <br />
+                <asp:Label ID="Label3" runat="server" Text="Your Gmail Password"></asp:Label>
+                :<br />
+                <asp:TextBox ID="GmailPassText" runat="server" Width="288px" 
+                    TextMode="Password"></asp:TextBox>
+                <br />
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="SendEmailButton" runat="server" onclick="SendEmailButton_Click" 
+                    Text="Send" Width="108px" />
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lbl_status" runat="server" Font-Size="Medium"></asp:Label>
+                <br />
 
-                <div style="text-align: center">
-                     &nbsp;<input id="EmailButton" type="button" value="Send" 
-                    style="background-color: #FFFFFF; border-style: none; border-width: 0px; padding: 2px; width: 119px; height: 28px; right: 25px"/></div>
+                <br />
+
                 </div>
                
         </form>

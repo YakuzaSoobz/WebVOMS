@@ -6,7 +6,7 @@
         .style18
         {
             width: 100%;
-            height: 473px;
+            height: 579px;
         }
         .style22
         {
@@ -22,6 +22,9 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     
     <div>
+        <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0"></script>
+
         <table class="style18">
             <tr>
                 <td class="style22" style="vertical-align: middle; text-align: center;">
@@ -74,7 +77,18 @@
                         </asp:SqlDataSource>
                     </div>
                     <p style="padding: 0px; margin: 0px">
+                    <div style = " width: 90%; float: left; height: auto">
+                    <h1 align="center" style="font-size: x-large; font-weight: bold">Visit us on Social Media</h1>
+                        <a class="twitter-timeline" data-lang="en" data-width="500" data-height="500" href="https://twitter.com/MhlathuzeS?ref_src=twsrc%5Etfw">Tweets by MhlathuzeS</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        
+                            <div class="fb-page" 
+                                data-tabs="timeline,events,messages"
+                                data-href="https://www.facebook.com/Mhlathuze-Industrial-104884297595721/?modal=admin_todo_tour"
+                                data-width="380" 
+                                data-hide-cover="false"></div>
+                                </div>
                         &nbsp;</p>
+                        
                 </td>
             </tr>
         </table>
