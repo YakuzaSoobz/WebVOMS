@@ -194,10 +194,12 @@
                             onclick="btnLogin_Click2" />
                         
                         <asp:Button ID="btnLogout" runat="server" BackColor="#5D7B9D" 
+
                         BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px"  
                             Width="100px" Text="Logout" 
                             onclick="btnLogout_Click" Visible="False" />
                         <asp:Label ID="lblLoggedIn" runat="server" Text="Label" Visible="False"></asp:Label>
+
                     </div>
                     
                      

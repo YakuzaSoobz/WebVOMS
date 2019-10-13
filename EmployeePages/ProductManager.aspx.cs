@@ -31,8 +31,9 @@ public partial class EmployeePages_ProductManager : System.Web.UI.Page
         }
         catch (SqlException ex)
         {
-            
-            throw;
+
+            string script = "alert(\"Oops, an error occured while trying to connect to the database!\");";
+            ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
         }
     }
 

@@ -16,6 +16,7 @@ public partial class SiteMaster : System.Web.UI.MasterPage
 
             if (Session["New"].Equals("") || Session["New"] == null)
             {
+
                 lblPrefix.Text = "";
                 lblUser.Text = "";
                 btnLogin.Visible = true;
@@ -100,6 +101,7 @@ public partial class SiteMaster : System.Web.UI.MasterPage
        
             Response.Redirect("~/LoginNew.aspx");
         
+
     }
     protected void HeadLoginStatus_LoggingOut(object sender, LoginCancelEventArgs e)
     {

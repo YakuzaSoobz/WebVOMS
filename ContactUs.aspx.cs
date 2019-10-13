@@ -15,7 +15,7 @@ public partial class ContactUs : System.Web.UI.Page
 
     protected void SendEmailButton_Click(object sender, EventArgs e)
     {
-        lbl_status.Text = SendMail("Mhlathuzeindustrial@gmail.com", SubjectText.Text, BodyTextBox.Text);
+        lbl_status.Text = SendMail("Mhlathuzeindustrial@gmail.com", DropDownListSubject.SelectedItem.Text, BodyTextBox.Text);
         lbl_status.ForeColor = System.Drawing.Color.Blue;
     }
     private string SendMail(string toAddress, string subject, string body )

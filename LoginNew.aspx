@@ -15,10 +15,10 @@
          <table class="style18" style="margin:0 auto">
         <tr>
             <td>
-                <asp:Label ID="Label1" runat="server" Text="Username : "></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Enter Email : "></asp:Label>
                 </td>
             <td>
-                <asp:TextBox ID="TextBoxUserName" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBoxUserName" runat="server" TextMode="Email"></asp:TextBox>
             </td>
             <td>
                   <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
@@ -28,7 +28,7 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="Label2" runat="server" Text="Password : "></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text=" Enter Password : "></asp:Label>
 
             </td>
             <td>
