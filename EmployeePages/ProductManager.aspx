@@ -61,7 +61,7 @@
                     <asp:Label ID="Lbl1" runat="server" Text='<%# Bind("Product_ID") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate> 
-                    <asp:LinkButton ID="ButtonInsert" OnClientClick="return confirm('Are you sure you want to ADD this Product to the Database');" OnClick="ButtonInsert_Click" runat="server" ValidationGroup="INSERT">Create New Product</asp:LinkButton>
+                    <asp:LinkButton OnClientClick="return confirm('Are you sure you want to ADD this Product to the Database');" ID="ButtonInsert"  OnClick="ButtonInsert_Click" runat="server" ValidationGroup="INSERT">Create New Product</asp:LinkButton>
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -139,7 +139,7 @@
                 <FooterTemplate>
                     <asp:DropDownList ID="DropDownListNewActiveStatus" runat="server" InitialValue="T">
                         <asp:ListItem>T</asp:ListItem>
-                        <asp:ListItem>F</asp:ListItem>
+                        <asp:ListItem>F</asp:ListItem> 
                     </asp:DropDownList>
                      <asp:Requiredfieldvalidator ValidationGroup="INSERT"  ID = "rfvCreateActiveStatus" runat="server" ErrorMessage="Active Status is a required field!" ControlToValidate="DropDownListNewActiveStatus" Text="*" ForeColor="Red">
                         

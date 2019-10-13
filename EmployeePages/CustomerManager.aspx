@@ -36,7 +36,7 @@
                         
                     <asp:Button ID="ButtonRefresh" runat="server" BackColor="#5D7B9D" 
                         BorderColor="Black" BorderStyle="Solid" ForeColor="White" Height="30px" 
-                        Text="Refresh" Width="70px"   />
+                        Text="Refresh" Width="70px" onclick="ButtonRefresh_Click"   />
                         
                 </td>
               

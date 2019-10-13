@@ -14,6 +14,16 @@
             width: 199px;
             float: left;
         }
+        .style21
+        {
+            width: 199px;
+            float: left;
+            height: 26px;
+        }
+        .style22
+        {
+            height: 26px;
+        }
     </style> 
 </asp:Content> 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server"> 
@@ -38,6 +48,8 @@
                 <asp:TextBox ID="txtFName" runat="server"></asp:TextBox> 
             </td> 
             <td> 
+                &nbsp;</td> 
+            <td> 
                 <asp:Label ID="Label10" runat="server" Text="* Street Address 1"></asp:Label> 
                 :</td> 
             <td> 
@@ -51,6 +63,8 @@
             <td> 
                 <asp:TextBox ID="txtSurname" runat="server"></asp:TextBox> 
             </td> 
+            <td> 
+                &nbsp;</td> 
             <td> 
                 <asp:Label ID="Label11" runat="server" Text="Street Address 2"></asp:Label> 
                 :</td> 
@@ -66,6 +80,8 @@
                 <asp:TextBox ID="txtDOB" runat="server" TextMode="Date"></asp:TextBox> 
             </td> 
             <td> 
+                &nbsp;</td> 
+            <td> 
                 <asp:Label ID="Label12" runat="server" Text="* Suburb"></asp:Label> 
                 :</td> 
             <td> 
@@ -80,6 +96,8 @@
                 <asp:TextBox ID="txtPhoneNo" runat="server" TextMode="Phone"></asp:TextBox> 
             </td> 
             <td> 
+                &nbsp;</td> 
+            <td> 
                 <asp:Label ID="Label13" runat="server" Text="* City"></asp:Label> 
                 :</td> 
             <td> 
@@ -87,16 +105,18 @@
             </td> 
         </tr> 
         <tr> 
-            <td class="style20"> 
+            <td class="style21"> 
                 <asp:Label ID="Label6" runat="server" Text="Alternate Contact Number"></asp:Label> 
                 :</td> 
-            <td> 
+            <td class="style22"> 
                 <asp:TextBox ID="txtAltPhoneNo" runat="server"></asp:TextBox> 
             </td> 
-            <td> 
+            <td class="style22"> 
+            </td> 
+            <td class="style22"> 
                 <asp:Label ID="Label14" runat="server" Text="* Province"></asp:Label> 
                 :</td> 
-            <td> 
+            <td class="style22"> 
                 <asp:TextBox ID="txtProvince" runat="server"></asp:TextBox> 
             </td> 
         </tr> 
@@ -107,6 +127,8 @@
             <td> 
                 <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox> 
             </td> 
+            <td> 
+                &nbsp;</td> 
             <td> 
                 <asp:Label ID="Label15" runat="server" Text="* Postal Code"></asp:Label> 
                 :</td> 
@@ -120,7 +142,10 @@
                 :</td> 
             <td> 
                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" MaxLength="10"></asp:TextBox> 
-                <asp:ImageButton ID="ImageButtonSeePassword" runat="server" />
+            </td> 
+            <td> 
+                <asp:ImageButton ID="ImageButton4" runat="server" Height="16px" 
+                    ImageUrl="~/Pictures/eye.png"  />
             </td> 
             <td> 
                 <asp:Label ID="Label16" runat="server" Text="* Active Status"></asp:Label> 
@@ -133,7 +158,7 @@
             </td> 
         </tr> 
         <tr> 
-            <td class="style19" colspan="4"> 
+            <td class="style19" colspan="5"> 
                 <asp:Button ID="btnRegister" runat="server" onclick="btnRegister_Click"  
                     Text="Click to Register" BackColor="#598DB6" BorderColor="Black" 
                     BorderStyle="Solid" ForeColor="White" Height="40px" /> 

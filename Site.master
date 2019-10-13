@@ -75,6 +75,7 @@
                             <td style="width: 200px; height: 100px; text-align: center;">
                                 <div class="loginDisplay">
                                     <asp:Label ID="Label1" runat="server" Text="Not Registered Yet?"></asp:Label>
+                                    <br />
                                     <asp:HyperLink ID="HyperLink1" runat="server" Text=" Click Here" 
                                         NavigateUrl="~/Registration.aspx"></asp:HyperLink>
                                     <asp:Label ID="lblPrefix" runat="server" Text=""></asp:Label>

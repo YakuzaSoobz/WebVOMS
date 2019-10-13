@@ -43,7 +43,7 @@ public partial class EmployeeMasterPage : System.Web.UI.MasterPage
                 }
            
         }
-        catch (Exception exception)
+        catch (Exception)
         {
             Response.Write("<script> alert('Oops page failed to load properly!')</script>");
         }
