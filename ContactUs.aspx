@@ -77,8 +77,7 @@
                 <asp:TextBox ID="GmailPassText"  runat="server" Width="100%" 
                     TextMode="Password"></asp:TextBox>
                 <br />
-                <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               
                    
                 <div style="text-align: center" >
                     <asp:Button ID="SendEmailButton" runat="server" onclick="SendEmailButton_Click" 
@@ -88,12 +87,6 @@
                     <asp:Label ID="lbl_status" runat="server" Font-Size="Small" ForeColor="Red"></asp:Label>
                 </div>
                 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               
-                <br />
-
                 <br />
 
                 </div>

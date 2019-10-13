@@ -65,7 +65,21 @@ public partial class ContactUs : System.Web.UI.Page
         }
         catch (FormatException)
         {
+           
             return false;
         }
+        catch (ArgumentException)
+        {
+            string script = "alert(\"Cannot send.Please try a valid Gmail\");";
+            ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+            return false;
+        }
+        catch (Exception)
+        {
+            string script = "alert(\"Oops, an error occured while trying send the email :( Please make sure you are using a valid Gmail!\");";
+            ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+            return false;
+        }
+       
     }
 }
