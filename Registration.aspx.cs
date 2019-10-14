@@ -9,6 +9,12 @@ public partial class Registration : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["Reason"].Equals("Yes"))
+        {
+            string script = "alert(\"Please register an account first\");";
+            ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+            Session["Reason"] = "";
+        }
         
     }
     protected void btnRegister_Click(object sender, EventArgs e)
@@ -81,13 +87,20 @@ public partial class Registration : System.Web.UI.Page
 
                 SQLDSAddCust.Insert();
                 int z = 0;
-                if (Session["Contact"].ToString().Equals("T"))
+                try
                 {
-                    z++;
+                    if (Session["Contact"].ToString().Equals("T"))
+                    {
+                        z++;
+                    }
+                    Session["New"] = txtEmail.Text;
+                    Session["Role"] = "Customer";
+                    Session["Contact"] = "";
                 }
-                Session["New"] = txtEmail.Text;
-                Session["Role"] = "Customer";
-                Session["Contact"] = "";
+                catch(Exception)
+                {
+
+                }
                 if(z == 0)
                 {
                     Response.Redirect("~/CustomerPages/CustomerAccount.aspx");

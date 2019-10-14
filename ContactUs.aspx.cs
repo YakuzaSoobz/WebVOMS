@@ -10,30 +10,46 @@ using System.Data.SqlClient;
 public partial class ContactUs : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
-    {
-        String temp = "";
-        temp = Session["Subject"].ToString();
-        if (temp.Equals("Request Quote"))
-        {
-            DropDownListSubject.SelectedIndex = 0;
-        }
-        else if (temp.Equals("Query"))
-        {
-            DropDownListSubject.SelectedIndex = 1;
-        }
-        else if (temp.Equals("Feedback"))
-        {
-            DropDownListSubject.SelectedIndex = 2;
-        }
-        else
-        {
-            DropDownListSubject.SelectedIndex = 0;
-        }
+    {   
+       
+            String temp = "";
+            try
+            {
+                temp = Session["Subject"].ToString();
+            }
+        catch(Exception)
+            {
 
-        BodyTextBox.Text = Session["Message"].ToString();
-        GmailIDText.Text = Session["Email"].ToString();
-        GmailPassText.Text = Session["Pass"].ToString();
-    }
+            }
+            if (temp.Equals("Request Quote"))
+            {
+                DropDownListSubject.SelectedIndex = 0;
+            }
+            else if (temp.Equals("Query"))
+            {
+                DropDownListSubject.SelectedIndex = 1;
+            }
+            else if (temp.Equals("Feedback"))
+            {
+                DropDownListSubject.SelectedIndex = 2;
+            }
+            else
+            {
+                DropDownListSubject.SelectedIndex = 0;
+            }
+        try
+            {
+            BodyTextBox.Text = Session["Message"].ToString();
+            GmailIDText.Text = Session["Email"].ToString();
+            GmailPassText.Text = Session["Pass"].ToString();
+            }
+        catch (Exception)
+        {
+
+        }
+        string script = "alert(\"Please make sure you are registered first before contacting us!)\");";
+        ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+        }
 
     protected void SendEmailButton_Click(object sender, EventArgs e)
     {
@@ -63,15 +79,16 @@ public partial class ContactUs : System.Web.UI.Page
         }
 
 
-        if (count == 0)
+        if (count != 0)
         {
             
-            lbl_status.Text = SendMail("Mhlathuzeindustrial@gmail.com", DropDownListSubject.SelectedItem.Text, BodyTextBox.Text);
+            lbl_status.Text = SendMail("Mhlathuzeindustrial@gmail.com", "Request", BodyTextBox.Text);
             Session["Subject"] = "";
             Session["Message"] = "";
             Session["Email"] = "";
             Session["Pass"] = "";
             lbl_status.ForeColor = System.Drawing.Color.Blue;
+           // Response.Redirect("~/Default.aspx");
         }
         else
         {
@@ -79,10 +96,14 @@ public partial class ContactUs : System.Web.UI.Page
             Session["Message"] = BodyTextBox.Text;
             Session["Email"] = GmailIDText.Text;
             Session["Pass"] = GmailPassText.Text;
-
+            Session["Reason"] = "Yes";
+          //  string script = "alert(\"Please register an account first\");";
+          //  ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+            Session["Contact"] = "T";
+            Response.Redirect("~/Registration.aspx");
+            
             string script = "alert(\"Please register an account first\");";
             ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
-            Response.Redirect("~/Registration.aspx");
         }
         }
     private string SendMail(string toAddress, string subject, string body )

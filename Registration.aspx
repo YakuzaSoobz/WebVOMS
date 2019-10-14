@@ -93,7 +93,7 @@
                 <asp:Label ID="Label5" runat="server" Text="* Contact Number"></asp:Label> 
                 :</td> 
             <td> 
-                <asp:TextBox ID="txtPhoneNo" runat="server" TextMode="Phone"></asp:TextBox> 
+                <asp:TextBox ID="txtPhoneNo" runat="server"></asp:TextBox> 
             </td> 
             <td> 
                 &nbsp;</td> 
@@ -125,7 +125,7 @@
                 <asp:Label ID="Label7" runat="server" Text="* Email"></asp:Label> 
                 :</td> 
             <td> 
-                <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox> 
+                <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox> 
             </td> 
             <td> 
                 &nbsp;</td> 
@@ -133,7 +133,7 @@
                 <asp:Label ID="Label15" runat="server" Text="* Postal Code"></asp:Label> 
                 :</td> 
             <td> 
-                <asp:TextBox ID="txtPostCode" runat="server" MaxLength="4" TextMode="Number"></asp:TextBox> 
+                <asp:TextBox ID="txtPostCode" runat="server" MaxLength="4"></asp:TextBox> 
             </td> 
         </tr> 
         <tr> 
@@ -141,7 +141,7 @@
                 <asp:Label ID="Label8" runat="server" Text=" * Password (Max 10 characters)"></asp:Label> 
                 :</td> 
             <td> 
-                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" MaxLength="10"></asp:TextBox> 
+                <asp:TextBox ID="txtPassword" runat="server" MaxLength="10"></asp:TextBox> 
             </td> 
             <td> 
                 <asp:ImageButton ID="ImageButton4" runat="server" Height="16px" 
