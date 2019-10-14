@@ -1,13 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EmployeeMasterPage.master" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ManagerMasterPage.master" %>
 
 <%@ Register assembly="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" namespace="CrystalDecisions.Web" tagprefix="CR" %>
 
 <script runat="server">
-
-    protected void CrystalReportViewer1_Init(object sender, EventArgs e)
-    {
-
-    }
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -16,11 +11,15 @@
         TestDataSetShankarTableAdapters.ProductTableAdapter ProdTA = new TestDataSetShankarTableAdapters.ProductTableAdapter();
         TestDataSetShankarTableAdapters.Customer_QuoteTableAdapter CusQTA = new TestDataSetShankarTableAdapters.Customer_QuoteTableAdapter();
         TestDataSetShankarTableAdapters.Customer_Quote_Line_ItemTableAdapter CustQlTA = new TestDataSetShankarTableAdapters.Customer_Quote_Line_ItemTableAdapter();
+        TestDataSetShankarTableAdapters.EmployeeTableAdapter EmpTA = new TestDataSetShankarTableAdapters.EmployeeTableAdapter();
+
 
 
         CustQlTA.Fill(DS.Customer_Quote_Line_Item);
         CusQTA.Fill(DS.Customer_Quote);
         ProdTA.Fill(DS.Product);
+        EmpTA.Fill(DS.Employee);
+        CustTA.Fill(DS.Customer);
 
         CrystalReportSource1.ReportDocument.SetDataSource(DS);
     }
@@ -34,7 +33,6 @@
         </Report>
     </CR:CrystalReportSource>
     <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" 
-        AutoDataBind="true" EnableDatabaseLogonPrompt="False" 
-        oninit="CrystalReportViewer1_Init" ReportSourceID="CrystalReportSource1" />
+        AutoDataBind="true" ReportSourceID="CrystalReportSource1" />
 </asp:Content>
 
