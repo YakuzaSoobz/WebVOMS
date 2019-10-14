@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EmployeeMasterPage.master" AutoEventWireup="true" CodeFile="SupplierManager.aspx.cs" Inherits="EmployeePages_SupplierManager" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
     <style type="text/css">
         .style18
@@ -184,6 +186,7 @@
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBoxPostalCode" runat="server" 
                         Text='<%# Bind("Supplier_Postal_Code") %>' MaxLength="4"></asp:TextBox>
+                    <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender1" runat="server" TargetControlID="TextBox3" Mask="9999" />
                     <asp:Requiredfieldvalidator  ID = "rfvEditPostalCode" runat="server" ErrorMessage="Enter a 4 digit Postal Code!" ControlToValidate="TextBoxPostalCode" Text="*" ForeColor="Red">
                     </asp:Requiredfieldvalidator>
                 </EditItemTemplate>
@@ -193,6 +196,7 @@
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="TextBoxNewPostalCode" runat="server" MaxLength="4"></asp:TextBox>
+                    <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender2" runat="server" TargetControlID="TextBoxNewPostalCode" Mask="9999" />
                     <asp:Requiredfieldvalidator ValidationGroup="INSERT" ID = "rfvCreatePostalCode" runat="server" ErrorMessage="Enter a Postal Code!" ControlToValidate="TextBoxNewPostalCode" Text="*" ForeColor="Red">
                         
                     </asp:Requiredfieldvalidator>
@@ -203,6 +207,8 @@
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBoxPhoneNo" runat="server" 
                         Text='<%# Bind("Supplier_Phone_No") %>' MaxLength="12"></asp:TextBox>
+                        <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender3" runat="server" TargetControlID="TextBoxPhoneNo" Mask="(999)9999999" />
+
                     <asp:Requiredfieldvalidator  ID = "rfvEditPhoneNo" runat="server" ErrorMessage="Enter a Phone No!" ControlToValidate="TextBoxPhoneNo" Text="*" ForeColor="Red">
                     </asp:Requiredfieldvalidator>
                 </EditItemTemplate>
@@ -211,6 +217,7 @@
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="TextBoxNewPhoneNo" runat="server" MaxLength="12"></asp:TextBox>
+                    <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender4" runat="server" TargetControlID="TextBoxNewPhoneNo" Mask="(999)9999999" />
                     <asp:Requiredfieldvalidator ValidationGroup="INSERT" ID = "rfvCreatePhoneNo" runat="server" ErrorMessage="Enter a Phone No!" ControlToValidate="TextBoxNewPhoneNo" Text="*" ForeColor="Red">
                         
                     </asp:Requiredfieldvalidator>
@@ -222,6 +229,7 @@
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBoxAltPhoneNo" runat="server" 
                         Text='<%# Bind("Supplier_Alt_Phone_No") %>' MaxLength="12"></asp:TextBox>
+                        <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender5" runat="server" TargetControlID="TextBoxAltPhoneNo" Mask="(999)9999999" />
                        
                 </EditItemTemplate>
                 <ItemTemplate>
@@ -230,6 +238,7 @@
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="TextBoxNewAltPhoneNo" runat="server" MaxLength="12"></asp:TextBox>
+                     <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender6" runat="server" TargetControlID="TextBoxNewAltPhoneNo" Mask="(999)9999999" />
                     
                 </FooterTemplate>
             </asp:TemplateField>
@@ -237,6 +246,7 @@
             <asp:TemplateField HeaderText="Email" SortExpression="Supplier_Email">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBoxEmail" runat="server" Text='<%# Bind("Supplier_Email") %>'></asp:TextBox>
+                     <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender7" runat="server" TargetControlID="TextBoxEmail"  PromptCharacter="@" />
                     <asp:Requiredfieldvalidator  ID = "rfvEditEmail" runat="server" ErrorMessage="Enter an Email Address!" ControlToValidate="TextBoxEmail" Text="*" ForeColor="Red">
                     </asp:Requiredfieldvalidator>
                 </EditItemTemplate>

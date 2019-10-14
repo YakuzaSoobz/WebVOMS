@@ -43,7 +43,7 @@
                 <asp:Label ID="Label1" runat="server" Text="Enter Email : "></asp:Label>
                 </td>
             <td class="style22">
-                <asp:TextBox ID="TextBoxUserName" runat="server" TextMode="Email" Width="300px"></asp:TextBox>
+                <asp:TextBox ID="TextBoxUserName" runat="server"  Width="300px"></asp:TextBox>
             </td>
             <td class="style19">
                 &nbsp;</td>

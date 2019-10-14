@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EmployeeMasterPage.master" AutoEventWireup="true"
     CodeFile="CustomerManager.aspx.cs" Inherits="EmployeePages_CustomerManager" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
      <style type="text/css">
         .style18
@@ -43,7 +45,9 @@
                 
             </tr>
      </table>
-               
+             
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>  
    <div style="overflow: scroll">
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True"
         AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Customer_ID" DataSourceID="SQLCustomerManager"
@@ -107,14 +111,21 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="DOB" SortExpression="Cust_DOB">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Cust_DOB") %>' TextMode="DateTime"></asp:TextBox>
+                
+                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Cust_DOB") %>' ></asp:TextBox>
+
+                       
+                     <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="TextBox3" />
+                      
                     <asp:RequiredFieldValidator ID="rfvEditDOB" runat="server" ErrorMessage="DOB is a required field" ControlToValidate = "TextBox3" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label4" runat="server" Text='<%# Bind("Cust_DOB") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="txtDOB" TextMode="Date" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtDOB"  runat="server"></asp:TextBox>
+
+                         <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" TargetControlID="txtDOB" />
                     <asp:RequiredFieldValidator ID="rfvInsertDOB" ValidationGroup="INSERT" runat="server" ErrorMessage="DOB is a required field" ControlToValidate = "txtDOB" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
@@ -144,27 +155,27 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Email" SortExpression="Cust_Email">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("Cust_Email") %>' TextMode="Email"></asp:TextBox>
+                    <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("Cust_Email") %>' ></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditEmail" runat="server" ErrorMessage="Email is a required field" ControlToValidate = "TextBox6" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label7" runat="server" Text='<%# Bind("Cust_Email") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" runat="server" ></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvInsertEmail" ValidationGroup="INSERT" runat="server" ErrorMessage="Email is a required field" ControlToValidate = "txtEmail" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Password" SortExpression="Cust_Password">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox7" TextMode="Password"  runat="server" Text='<%# Bind("Cust_Password") %>'  MaxLength="10"></asp:TextBox>
+                    <asp:TextBox ID="TextBox7"  runat="server" Text='<%# Bind("Cust_Password") %>'  MaxLength="10"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditPassword" runat="server" ErrorMessage="Password is a required field"  ControlToValidate = "TextBox7" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label8" runat="server"  Text='<%# Bind("Cust_Password") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="txtPassword"   runat="server"  TextMode="Password" MaxLength="10"></asp:TextBox>
+                    <asp:TextBox ID="txtPassword"   runat="server"   MaxLength="10"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvInsertPassword" ValidationGroup="INSERT" runat="server"  ErrorMessage="Password is a required field" ControlToValidate = "txtPassword" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
