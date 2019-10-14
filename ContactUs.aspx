@@ -72,10 +72,7 @@
                 Enter your Email:<br />
                 <asp:TextBox ID="GmailIDText" runat="server" Width="100%"></asp:TextBox>
                 <br />
-                <asp:Label ID="Label3" runat="server"  Text="Enter your Email Password"></asp:Label>
-                :<br />
-                <asp:TextBox ID="GmailPassText"  runat="server" Width="100%" 
-                    TextMode="Password"></asp:TextBox>
+                <br />
                 <br />
                <br />
                    

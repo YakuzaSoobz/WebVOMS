@@ -12,7 +12,7 @@ public partial class ContactUs : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {   
        
-            String temp = "";
+            /*String temp = "";
             try
             {
                 temp = Session["Subject"].ToString();
@@ -49,11 +49,11 @@ public partial class ContactUs : System.Web.UI.Page
         }
         string script = "alert(\"Please make sure you are registered first before contacting us!)\");";
         ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
-        }
-
+        */}
+    
     protected void SendEmailButton_Click(object sender, EventArgs e)
     {
-        int count = 0;
+        /*int count = 0;
         try 
         {
             SqlConnection conn = new SqlConnection("Server=146.230.177.46\\ist3;Database=group16;User ID=group16;Password=78fgg");
@@ -81,13 +81,16 @@ public partial class ContactUs : System.Web.UI.Page
 
         if (count != 0)
         {
-            
-            lbl_status.Text = SendMail("Mhlathuzeindustrial@gmail.com", "Request", BodyTextBox.Text);
-            Session["Subject"] = "";
+            */
+            string bodymsg = BodyTextBox.Text + "            [" + DropDownListSubject.Text + " was sent by " + GmailIDText.Text + "]";
+            lbl_status.Text = SendMail("Mhlathuzeindustrial@gmail.com", DropDownListSubject.Text, bodymsg);
+            lbl_status.ForeColor = System.Drawing.Color.Blue;
+
+           /* Session["Subject"] = "";
             Session["Message"] = "";
             Session["Email"] = "";
             Session["Pass"] = "";
-            lbl_status.ForeColor = System.Drawing.Color.Blue;
+            
            // Response.Redirect("~/Default.aspx");
         }
         else
@@ -104,15 +107,17 @@ public partial class ContactUs : System.Web.UI.Page
             
             string script = "alert(\"Please register an account first\");";
             ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
-        }
+        }*/
         }
     private string SendMail(string toAddress, string subject, string body )
     {
 
-        if (IsValid(GmailIDText.Text) == true)
+         if (IsValid("Mhlathuzeindustrial@gmail.com") == true && IsValid(GmailIDText.Text) == true)
         {
-            string senderId = GmailIDText.Text;
-            string senderPwd = GmailPassText.Text;
+            //string senderId = GmailIDText.Text;
+                string senderId = "Mhlathuzeindustrial@gmail.com";
+            //string senderPwd = GmailPassText.Text;
+                string senderPwd = "Ashika123";
             try
             {
                 SmtpClient smtp = new SmtpClient
@@ -138,7 +143,7 @@ public partial class ContactUs : System.Web.UI.Page
         }
         else
         {
-            return "Invalid email address...";
+            return "Invalid user email address...";
         }
         
      
