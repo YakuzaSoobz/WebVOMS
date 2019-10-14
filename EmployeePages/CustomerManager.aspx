@@ -157,7 +157,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Password" SortExpression="Cust_Password">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox7" TextMode="Password"  runat="server" Text='<%# Bind("Cust_Password") %>' Enabled="False" MaxLength="10"></asp:TextBox>
+                    <asp:TextBox ID="TextBox7" TextMode="Password"  runat="server" Text='<%# Bind("Cust_Password") %>'  MaxLength="10"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfvEditPassword" runat="server" ErrorMessage="Password is a required field"  ControlToValidate = "TextBox7" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </EditItemTemplate>
                 <ItemTemplate>

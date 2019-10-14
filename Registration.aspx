@@ -144,9 +144,7 @@
                 <asp:TextBox ID="txtPassword" runat="server" MaxLength="10"></asp:TextBox> 
             </td> 
             <td> 
-                <asp:ImageButton ID="ImageButton4" runat="server" Height="16px" 
-                    ImageUrl="~/Pictures/eye.png"  />
-            </td> 
+                &nbsp;</td> 
             <td> 
                 <asp:Label ID="Label16" runat="server" Text="* Active Status"></asp:Label> 
                 :</td> 

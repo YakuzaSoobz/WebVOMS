@@ -9,11 +9,21 @@ public partial class Registration : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["Reason"].Equals("Yes"))
+        try
         {
+            if (Session["Reason"].Equals("Yes"))
+            {
+                string script = "alert(\"Please register an account first\");";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                Session["Reason"] = "";
+            }
+        
+        }
+        catch (Exception)
+        {
+
             string script = "alert(\"Please register an account first\");";
             ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
-            Session["Reason"] = "";
         }
         
     }
@@ -119,7 +129,7 @@ public partial class Registration : System.Web.UI.Page
         }
         catch (Exception a)
         {
-            string script = "alert(\"Oops, an error occured while trying to connect to the database!\");";
+            string script = "alert(\"Cannot register! Please try again!\");";
             ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
         }
     }

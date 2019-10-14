@@ -65,9 +65,7 @@
             </td>
             <td class="style19">
                 
-                <asp:ImageButton ID="ImageButton4" runat="server" Height="16px" 
-                    ImageUrl="~/Pictures/eye.png" onclick="ImageButton4_Click" />
-            </td>
+                &nbsp;</td>
             <td class="style21">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                     ControlToValidate="TextBoxPassword" ErrorMessage="* Please enter Password" 

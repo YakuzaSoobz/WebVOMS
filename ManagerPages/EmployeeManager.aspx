@@ -3,9 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    <h2 style="font-size: x-large; text-decoration: underline;">
+        Employee viewer:
+    </h2>
     <br />
     <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+    <asp:GridView ID="GridView1" HorizontalAlign = "center" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" DataKeyNames="Employee_ID" DataSourceID="SQLEmployees" 
         ForeColor="#333333" GridLines="None" Width="1162px">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
